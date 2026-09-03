@@ -1,0 +1,53 @@
+name: oakwell
+version: "1.0.0"
+config-version: 2
+
+profile: oakwell
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+docs-paths: ["docs"]
+
+clean-targets:
+  - target
+  - dbt_packages
+  - logs
+
+seeds:
+  oakwell:
+    +quote_columns: false
+    +docs:
+      show: true
+
+models:
+  oakwell:
+    +materialized: view
+    staging:
+      +materialized: view
+      +tags: ["staging"]
+    intermediate:
+      +materialized: view
+      +tags: ["intermediate"]
+    marts:
+      +materialized: table
+      +tags: ["marts"]
+    utilities:
+      +materialized: table
+      +tags: ["utilities"]
+
+flags:
+  # dbt 1.12 still copies latest-spec `window` onto type_params.window for
+  # cumulative and conversion metrics. Keep this flag off so those definitions
+  # parse; windows are also set on cumulative_type_params / conversion_type_params.
+  require_nested_cumulative_type_params: false
+
+vars:
+  # Inclusive as-of date for the synthetic warehouse. The generator and
+  # models treat this as "today" for open subscriptions and current status.
+  as_of_date: "2026-08-31"
+  time_spine_start_date: "2021-01-01"
+  time_spine_end_date: "2027-12-31"

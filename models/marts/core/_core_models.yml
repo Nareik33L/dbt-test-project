@@ -1,0 +1,312 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: >
+      Organisation-level customer dimension. Geography, segment, and acquisition
+      attributes are as of signup. Current plan and MRR reflect the latest
+      subscription. Includes expired trials that never converted.
+    semantic_model:
+      enabled: true
+      name: customers
+    agg_time_dimension: signup_date
+    columns:
+      - name: customer_id
+        description: Primary key.
+        tests:
+          - unique
+          - not_null
+        entity:
+          type: primary
+          name: customer
+      - name: customer_code
+        tests:
+          - unique
+          - not_null
+      - name: organisation_name
+        tests:
+          - not_null
+        dimension:
+          type: categorical
+          name: organisation_name
+      - name: country_code
+        tests:
+          - not_null
+        dimension:
+          type: categorical
+          name: country
+      - name: country_name
+        dimension:
+          type: categorical
+          name: country_name
+      - name: region
+        tests:
+          - not_null
+        dimension:
+          type: categorical
+          name: region
+      - name: subregion
+        dimension:
+          type: categorical
+          name: subregion
+      - name: industry
+        dimension:
+          type: categorical
+          name: industry
+      - name: employee_count
+        dimension:
+          type: categorical
+          name: employee_count
+      - name: segment
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["SMB", "Mid-Market", "Enterprise"]
+        dimension:
+          type: categorical
+          name: customer_segment
+      - name: acquisition_channel
+        tests:
+          - not_null
+        dimension:
+          type: categorical
+          name: acquisition_channel
+      - name: signup_date
+        tests:
+          - not_null
+        granularity: day
+        dimension:
+          type: time
+          name: signup_date
+      - name: customer_status
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["active", "churned", "trial_expired"]
+        dimension:
+          type: categorical
+          name: customer_status
+      - name: current_plan_name
+        dimension:
+          type: categorical
+          name: current_plan
+      - name: current_billing_interval
+        dimension:
+          type: categorical
+          name: current_billing_interval
+    derived_semantics:
+      dimensions:
+        - name: is_enterprise
+          type: categorical
+          expr: "segment = 'Enterprise'"
+        - name: is_self_serve
+          type: categorical
+          expr: "acquisition_channel = 'self_serve'"
+    metrics:
+      - name: signups
+        description: Organisations that signed up, including trials that never paid.
+        type: simple
+        label: Signups
+        agg: count
+        expr: 1
+      - name: paying_signups
+        description: Organisations that signed up and became (or already were) paying customers.
+        type: simple
+        label: Paying Signups
+        agg: count
+        expr: 1
+        filter: |
+          {{ Dimension('customer__customer_status') }} != 'trial_expired'
+      - name: enterprise_signups
+        description: Signups in the Enterprise segment.
+        type: simple
+        label: Enterprise Signups
+        agg: count
+        expr: 1
+        filter: |
+          {{ Dimension('customer__customer_segment') }} = 'Enterprise'
+
+  - name: dim_plans
+    description: Subscription plan catalogue with list prices and packaged features.
+    semantic_model:
+      enabled: true
+      name: plans
+    columns:
+      - name: plan_id
+        tests:
+          - unique
+          - not_null
+        entity:
+          type: primary
+          name: plan
+      - name: plan_code
+        tests:
+          - unique
+          - not_null
+        dimension:
+          type: categorical
+          name: plan_code
+      - name: plan_name
+        tests:
+          - not_null
+        dimension:
+          type: categorical
+          name: plan_name
+      - name: plan_tier
+        dimension:
+          type: categorical
+          name: plan_tier
+
+  - name: fct_subscriptions
+    description: One row per subscription. Reactivations are new subscriptions.
+    semantic_model:
+      enabled: true
+      name: subscriptions
+    agg_time_dimension: started_at
+    columns:
+      - name: subscription_id
+        tests:
+          - unique
+          - not_null
+        entity:
+          type: primary
+          name: subscription
+      - name: customer_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_customers')
+              field: customer_id
+        entity:
+          type: foreign
+          name: customer
+      - name: plan_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_plans')
+              field: plan_id
+        entity:
+          type: foreign
+          name: plan
+      - name: started_at
+        tests:
+          - not_null
+        granularity: day
+        dimension:
+          type: time
+          name: started_at
+      - name: subscription_status
+        tests:
+          - accepted_values:
+              values: ["active", "cancelled"]
+        dimension:
+          type: categorical
+          name: subscription_status
+      - name: billing_interval
+        dimension:
+          type: categorical
+          name: billing_interval
+      - name: cancellation_reason
+        dimension:
+          type: categorical
+          name: cancellation_reason
+      - name: plan_name
+        dimension:
+          type: categorical
+          name: subscription_plan
+    metrics:
+      - name: subscriptions_started
+        description: Count of subscriptions that started.
+        type: simple
+        label: Subscriptions Started
+        agg: count
+        expr: 1
+      - name: cancelled_subscriptions
+        description: Subscriptions that have cancelled.
+        type: simple
+        label: Cancelled Subscriptions
+        agg: count
+        expr: 1
+        filter: |
+          {{ Dimension('subscription__subscription_status') }} = 'cancelled'
+
+  - name: fct_trials
+    description: Self-serve trials and whether they converted to a paid subscription.
+    semantic_model:
+      enabled: true
+      name: trials
+    agg_time_dimension: trial_start_date
+    columns:
+      - name: trial_id
+        tests:
+          - unique
+          - not_null
+        entity:
+          type: primary
+          name: trial
+      - name: customer_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_customers')
+              field: customer_id
+        entity:
+          type: foreign
+          name: customer
+      - name: trial_start_date
+        tests:
+          - not_null
+        granularity: day
+        dimension:
+          type: time
+          name: trial_start_date
+      - name: converted_at
+        granularity: day
+        dimension:
+          type: time
+          name: converted_at
+      - name: acquisition_channel
+        dimension:
+          type: categorical
+          name: trial_channel
+      - name: is_converted
+        dimension:
+          type: categorical
+          name: is_converted
+      - name: conversion_status
+        dimension:
+          type: categorical
+          name: conversion_status
+    metrics:
+      - name: trials_started
+        description: Number of product trials that began.
+        type: simple
+        label: Trials Started
+        agg: count
+        expr: 1
+        join_to_timespine: true
+        fill_nulls_with: 0
+      - name: trials_converted
+        description: >
+          Trials that eventually converted, attributed to the trial start date.
+          Use this with trials_started for cohort conversion rate.
+        type: simple
+        label: Trials Converted
+        agg: sum
+        expr: converted_count
+      - name: trial_conversion_events
+        description: Conversion events timestamped on the conversion date.
+        type: simple
+        label: Trial Conversion Events
+        agg: count
+        expr: 1
+        agg_time_dimension: converted_at
+        filter: |
+          {{ Dimension('trial__conversion_status') }} = 'converted'
+      - name: trial_conversion_rate
+        description: Share of trials started in the period that converted to paid.
+        type: ratio
+        label: Trial Conversion Rate
+        numerator: trials_converted
+        denominator: trials_started

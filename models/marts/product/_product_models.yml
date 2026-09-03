@@ -1,0 +1,125 @@
+version: 2
+
+models:
+  - name: fct_product_usage_daily
+    description: >
+      Daily product usage at customer grain. Only days with recorded activity
+      are stored. Seat utilisation is active seats divided by licensed seats
+      on that day.
+    semantic_model:
+      enabled: true
+      name: product_usage
+    agg_time_dimension: usage_date
+    columns:
+      - name: usage_id
+        tests:
+          - unique
+          - not_null
+        entity:
+          type: primary
+          name: usage_day
+      - name: customer_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_customers')
+              field: customer_id
+        entity:
+          type: foreign
+          name: customer
+      - name: usage_date
+        tests:
+          - not_null
+        granularity: day
+        dimension:
+          type: time
+          name: usage_date
+      - name: country_code
+        dimension:
+          type: categorical
+          name: country
+      - name: region
+        dimension:
+          type: categorical
+          name: region
+      - name: segment
+        dimension:
+          type: categorical
+          name: customer_segment
+      - name: acquisition_channel
+        dimension:
+          type: categorical
+          name: acquisition_channel
+      - name: customer_status
+        dimension:
+          type: categorical
+          name: customer_status
+    derived_semantics:
+      dimensions:
+        - name: is_low_utilisation
+          type: categorical
+          expr: "licensed_seats > 0 and active_seats::double / licensed_seats < 0.4"
+    metrics:
+      - name: work_items_completed
+        description: Work items completed in the product.
+        type: simple
+        label: Work Items Completed
+        agg: sum
+        expr: work_items_completed
+        fill_nulls_with: 0
+        join_to_timespine: true
+      - name: api_calls
+        description: API calls made by customers with API access.
+        type: simple
+        label: API Calls
+        agg: sum
+        expr: api_calls
+        fill_nulls_with: 0
+      - name: session_minutes
+        description: Recorded in-product session minutes.
+        type: simple
+        label: Session Minutes
+        agg: sum
+        expr: session_minutes
+      - name: usage_days
+        description: Customer-days with recorded product activity.
+        type: simple
+        label: Usage Days
+        agg: count
+        expr: 1
+      - name: daily_active_seats
+        description: >
+          Sum of daily active seats. Across a month this is seat-days, not a
+          unique seat count.
+        type: simple
+        label: Daily Active Seats
+        agg: sum
+        expr: active_seats
+      - name: licensed_seat_days
+        description: Sum of licensed seats on days with activity.
+        type: simple
+        label: Licensed Seat Days
+        agg: sum
+        expr: licensed_seats
+      - name: distinct_active_users
+        description: Distinct customers with product activity. Non-additive across overlapping days; count_distinct is used.
+        type: simple
+        label: Distinct Active Customers
+        agg: count_distinct
+        expr: customer_id
+      - name: work_items_churned_customers
+        description: Work items completed by organisations that are currently churned.
+        type: simple
+        label: Work Items (Churned Customers)
+        agg: sum
+        expr: work_items_completed
+        filter: |
+          {{ Dimension('usage_day__customer_status') }} = 'churned'
+      - name: work_items_active_customers
+        description: Work items completed by organisations that are currently active.
+        type: simple
+        label: Work Items (Active Customers)
+        agg: sum
+        expr: work_items_completed
+        filter: |
+          {{ Dimension('usage_day__customer_status') }} = 'active'

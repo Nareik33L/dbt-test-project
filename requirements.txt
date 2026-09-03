@@ -1,0 +1,5 @@
+# Local analytics stack for the Oakwell dbt project.
+# Pin the MetricFlow bundle so dbt-core, the DuckDB adapter, and the mf CLI
+# resolve to compatible versions.
+dbt-metricflow[dbt-duckdb]==0.14.0
+pyyaml>=6.0

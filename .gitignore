@@ -1,0 +1,26 @@
+# dbt
+target/
+dbt_packages/
+logs/
+catalog.json
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Warehouse
+data/*.duckdb
+data/*.duckdb.wal
+data/warehouse/
+
+# MetricFlow local identity
+.user.yml
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+*.swp

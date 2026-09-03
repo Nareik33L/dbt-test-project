@@ -1,0 +1,5 @@
+plan_id,plan_code,plan_name,plan_tier,list_price_monthly,billing_intervals,max_seats,includes_sso,includes_premium_support,includes_api_access
+1,starter,Starter,1,29,monthly,10,false,false,false
+2,team,Team,2,59,"monthly,annual",50,false,false,true
+3,business,Business,3,99,"monthly,annual",,true,false,true
+4,enterprise,Enterprise,4,149,annual,,true,true,true
