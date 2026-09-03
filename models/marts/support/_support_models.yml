@@ -1,0 +1,145 @@
+version: 2
+
+models:
+  - name: fct_support_tickets
+    description: One row per support ticket.
+    semantic_model:
+      enabled: true
+      name: support_tickets
+    agg_time_dimension: opened_at
+    columns:
+      - name: ticket_id
+        tests:
+          - unique
+          - not_null
+        entity:
+          type: primary
+          name: ticket
+      - name: customer_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_customers')
+              field: customer_id
+        entity:
+          type: foreign
+          name: customer
+      - name: opened_at
+        tests:
+          - not_null
+        granularity: day
+        dimension:
+          type: time
+          name: opened_at
+      - name: ticket_status
+        tests:
+          - accepted_values:
+              values: ["open", "pending", "solved", "closed"]
+        dimension:
+          type: categorical
+          name: ticket_status
+      - name: category
+        tests:
+          - accepted_values:
+              values: ["how_to", "bug", "billing", "feature_request", "outage", "onboarding"]
+        dimension:
+          type: categorical
+          name: ticket_category
+      - name: priority
+        tests:
+          - accepted_values:
+              values: ["low", "medium", "high", "urgent"]
+        dimension:
+          type: categorical
+          name: ticket_priority
+      - name: ticket_channel
+        dimension:
+          type: categorical
+          name: ticket_channel
+      - name: country_code
+        dimension:
+          type: categorical
+          name: country
+      - name: region
+        dimension:
+          type: categorical
+          name: region
+      - name: segment
+        dimension:
+          type: categorical
+          name: customer_segment
+      - name: customer_status
+        dimension:
+          type: categorical
+          name: customer_status
+    metrics:
+      - name: support_tickets
+        description: Tickets opened.
+        type: simple
+        label: Support Tickets
+        agg: count
+        expr: 1
+        join_to_timespine: true
+        fill_nulls_with: 0
+      - name: resolved_tickets
+        description: Tickets marked solved or closed.
+        type: simple
+        label: Resolved Tickets
+        agg: sum
+        expr: is_resolved
+      - name: high_priority_tickets
+        description: Tickets opened at high or urgent priority.
+        type: simple
+        label: High Priority Tickets
+        agg: sum
+        expr: is_high_priority
+      - name: billing_tickets
+        description: Tickets in the billing category.
+        type: simple
+        label: Billing Tickets
+        agg: count
+        expr: 1
+        filter: |
+          {{ Dimension('ticket__ticket_category') }} = 'billing'
+      - name: bug_tickets
+        description: Tickets reporting product bugs.
+        type: simple
+        label: Bug Tickets
+        agg: count
+        expr: 1
+        filter: |
+          {{ Dimension('ticket__ticket_category') }} = 'bug'
+      - name: average_first_response_hours
+        description: Average hours to first response. Non-additive (average).
+        type: simple
+        label: Average First Response Hours
+        agg: average
+        expr: first_response_hours
+      - name: p90_first_response_hours
+        description: 90th percentile hours to first response.
+        type: simple
+        label: P90 First Response Hours
+        agg: percentile
+        expr: first_response_hours
+        percentile: 0.9
+        percentile_type: continuous
+      - name: average_csat
+        description: Average CSAT score on tickets that received a survey.
+        type: simple
+        label: Average CSAT
+        agg: average
+        expr: csat_score
+      - name: tickets_from_churned_customers
+        description: Tickets opened by organisations that are currently churned.
+        type: simple
+        label: Tickets From Churned Customers
+        agg: count
+        expr: 1
+        filter: |
+          {{ Dimension('ticket__customer_status') }} = 'churned'
+      - name: distinct_customers_with_tickets
+        description: Distinct customers who opened at least one ticket.
+        type: simple
+        label: Customers With Tickets
+        agg: count_distinct
+        expr: customer_id

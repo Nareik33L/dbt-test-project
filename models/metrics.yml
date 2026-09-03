@@ -1,0 +1,157 @@
+version: 2
+
+# Cross-model and derived metrics. Simple metrics live on the models that
+# carry the grain; this file holds ratios, derived calculations, cumulative
+# windows, and conversion logic that span those building blocks.
+
+metrics:
+  - name: arr
+    description: Annualised recurring revenue from ending MRR (x12).
+    type: derived
+    label: ARR
+    expr: ending_mrr * 12
+    input_metrics:
+      - name: ending_mrr
+
+  - name: net_new_mrr
+    description: New + expansion + reactivation − contraction − churned MRR.
+    type: derived
+    label: Net New MRR
+    expr: new_mrr + expansion_mrr + reactivation_mrr - contraction_mrr - churned_mrr
+    input_metrics:
+      - name: new_mrr
+      - name: expansion_mrr
+      - name: reactivation_mrr
+      - name: contraction_mrr
+      - name: churned_mrr
+
+  - name: arpu
+    description: Ending MRR per active customer (ARPU).
+    type: ratio
+    label: ARPU
+    numerator: ending_mrr
+    denominator: active_customers
+
+  - name: customer_churn_rate
+    description: >
+      Logo churn rate. Churned customers in the period divided by active
+      customers in the prior month.
+    type: derived
+    label: Customer Churn Rate
+    expr: churned_customers / nullif(beginning_customers, 0)
+    input_metrics:
+      - name: churned_customers
+      - name: active_customers
+        alias: beginning_customers
+        offset_window: 1 month
+
+  - name: gross_mrr_churn_rate
+    description: Churned MRR divided by prior-month ending MRR.
+    type: derived
+    label: Gross MRR Churn Rate
+    expr: churned_mrr / nullif(beginning_mrr, 0)
+    input_metrics:
+      - name: churned_mrr
+      - name: ending_mrr
+        alias: beginning_mrr
+        offset_window: 1 month
+
+  - name: net_revenue_retention
+    description: >
+      (Ending MRR − new MRR − reactivation MRR) / prior-month ending MRR.
+      This is a monthly NRR approximation for the surviving plus expanded base.
+    type: derived
+    label: Net Revenue Retention
+    expr: (ending_mrr - new_mrr - reactivation_mrr) / nullif(beginning_mrr, 0)
+    input_metrics:
+      - name: ending_mrr
+      - name: new_mrr
+      - name: reactivation_mrr
+      - name: ending_mrr
+        alias: beginning_mrr
+        offset_window: 1 month
+
+  - name: mrr_mom_change
+    description: Change in ending MRR versus the prior month.
+    type: derived
+    label: MRR Month-over-Month Change
+    expr: ending_mrr - prior_ending_mrr
+    input_metrics:
+      - name: ending_mrr
+      - name: ending_mrr
+        alias: prior_ending_mrr
+        offset_window: 1 month
+
+  - name: tickets_per_active_customer
+    description: Support tickets opened per active customer.
+    type: ratio
+    label: Tickets Per Active Customer
+    numerator: support_tickets
+    denominator: active_customers
+
+  - name: work_items_per_active_customer
+    description: Work items completed per active customer.
+    type: ratio
+    label: Work Items Per Active Customer
+    numerator: work_items_completed
+    denominator: active_customers
+
+  - name: seat_utilisation
+    description: Active seat-days divided by licensed seat-days on days with activity.
+    type: ratio
+    label: Seat Utilisation
+    numerator: daily_active_seats
+    denominator: licensed_seat_days
+
+  - name: paid_invoice_rate
+    description: Share of invoices that are paid.
+    type: ratio
+    label: Paid Invoice Rate
+    numerator: paid_invoice_count
+    denominator: invoice_count
+
+  - name: revenue_per_invoice
+    description: Collected revenue divided by paid invoice count.
+    type: ratio
+    label: Revenue Per Paid Invoice
+    numerator: revenue
+    denominator: paid_invoice_count
+
+  - name: trailing_90d_work_items
+    description: Work items completed in a rolling 90-day window.
+    type: cumulative
+    label: Trailing 90d Work Items
+    input_metric: work_items_completed
+    window: 90 days
+
+  - name: trailing_30d_tickets
+    description: Support tickets opened in a rolling 30-day window.
+    type: cumulative
+    label: Trailing 30d Tickets
+    input_metric: support_tickets
+    window: 30 days
+
+  - name: revenue_ytd
+    description: Collected revenue cumulative from the start of the year.
+    type: cumulative
+    label: Revenue YTD
+    input_metric: revenue
+    grain_to_date: year
+
+  - name: all_time_revenue
+    description: Collected revenue accumulated across all time through the requested date.
+    type: cumulative
+    label: All-time Revenue
+    input_metric: revenue
+
+  - name: trial_to_paid_conversion
+    description: >
+      Share of trial starts that convert to a paid subscription within 30 days.
+      Uses MetricFlow conversion logic on the customer entity.
+    type: conversion
+    label: Trial to Paid Conversion
+    entity: customer
+    calculation: conversion_rate
+    window: 30 days
+    base_metric: trials_started
+    conversion_metric: subscriptions_started

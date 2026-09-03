@@ -1,0 +1,8 @@
+oakwell:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: data/oakwell.duckdb
+      threads: 4
+      schema: main

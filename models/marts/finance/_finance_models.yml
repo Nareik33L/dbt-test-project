@@ -1,0 +1,522 @@
+version: 2
+
+models:
+  - name: fct_mrr_snapshot
+    description: >
+      Customer-month SaaS snapshot. Grain is one row per customer per month
+      they had ending MRR or churned. Ending MRR is commercially active monthly
+      recurring revenue as of month-end. Movement columns form the MRR bridge.
+      Ending MRR is semi-additive across time (latest month in the window);
+      bridge columns are additive.
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - customer_id
+            - month_start
+    semantic_model:
+      enabled: true
+      name: mrr_snapshot
+    agg_time_dimension: month_start
+    columns:
+      - name: customer_month_id
+        tests:
+          - unique
+          - not_null
+        entity:
+          type: primary
+          name: customer_month
+      - name: customer_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_customers')
+              field: customer_id
+        entity:
+          type: foreign
+          name: customer
+      - name: plan_id
+        entity:
+          type: foreign
+          name: plan
+      - name: month_start
+        tests:
+          - not_null
+        granularity: month
+        dimension:
+          type: time
+          name: month_start
+      - name: movement_type
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["new", "expansion", "contraction", "churn", "reactivation", "retained"]
+        dimension:
+          type: categorical
+          name: mrr_movement_type
+      - name: plan_name
+        dimension:
+          type: categorical
+          name: plan_name
+      - name: plan_code
+        dimension:
+          type: categorical
+          name: plan_code
+      - name: billing_interval
+        dimension:
+          type: categorical
+          name: billing_interval
+      - name: country_code
+        dimension:
+          type: categorical
+          name: country
+      - name: region
+        dimension:
+          type: categorical
+          name: region
+      - name: subregion
+        dimension:
+          type: categorical
+          name: subregion
+      - name: industry
+        dimension:
+          type: categorical
+          name: industry
+      - name: segment
+        dimension:
+          type: categorical
+          name: customer_segment
+      - name: acquisition_channel
+        dimension:
+          type: categorical
+          name: acquisition_channel
+    metrics:
+      - name: ending_mrr
+        description: >
+          Month-end monthly recurring revenue. Semi-additive across time —
+          MetricFlow takes the latest month in the requested window, then sums
+          across customers.
+        type: simple
+        label: Ending MRR
+        agg: sum
+        expr: ending_mrr
+        fill_nulls_with: 0
+        non_additive_dimension:
+          name: month_start
+          window_agg: max
+      - name: ending_arr
+        description: Ending MRR annualised (x12). Semi-additive across time.
+        type: simple
+        label: Ending ARR
+        agg: sum
+        expr: ending_arr
+        fill_nulls_with: 0
+        non_additive_dimension:
+          name: month_start
+          window_agg: max
+      - name: ending_seats
+        description: Licensed seats as of month-end. Semi-additive across time.
+        type: simple
+        label: Ending Seats
+        agg: sum
+        expr: seats
+        non_additive_dimension:
+          name: month_start
+          window_agg: max
+      - name: active_customers
+        description: Customers with ending MRR greater than zero as of the last month in the window.
+        type: simple
+        label: Active Customers
+        agg: sum
+        expr: is_active
+        fill_nulls_with: 0
+        non_additive_dimension:
+          name: month_start
+          window_agg: max
+      - name: active_subscriptions
+        description: Active subscriptions as of month-end. Semi-additive across time.
+        type: simple
+        label: Active Subscriptions
+        agg: sum
+        expr: active_subscriptions
+        non_additive_dimension:
+          name: month_start
+          window_agg: max
+      - name: new_mrr
+        description: MRR from brand-new paying customers. Additive across time.
+        type: simple
+        label: New MRR
+        agg: sum
+        expr: new_mrr
+        fill_nulls_with: 0
+      - name: expansion_mrr
+        description: MRR gained from existing customers increasing seats or plan. Additive.
+        type: simple
+        label: Expansion MRR
+        agg: sum
+        expr: expansion_mrr
+        fill_nulls_with: 0
+      - name: contraction_mrr
+        description: MRR lost from existing customers decreasing seats or plan. Additive.
+        type: simple
+        label: Contraction MRR
+        agg: sum
+        expr: contraction_mrr
+        fill_nulls_with: 0
+      - name: churned_mrr
+        description: MRR lost from customers who cancelled. Additive.
+        type: simple
+        label: Churned MRR
+        agg: sum
+        expr: churned_mrr
+        fill_nulls_with: 0
+      - name: reactivation_mrr
+        description: MRR from previously churned customers who returned. Additive.
+        type: simple
+        label: Reactivation MRR
+        agg: sum
+        expr: reactivation_mrr
+        fill_nulls_with: 0
+      - name: new_customers
+        description: Customers whose first paid MRR month falls in the period.
+        type: simple
+        label: New Customers
+        agg: sum
+        expr: is_new_customer
+        fill_nulls_with: 0
+      - name: churned_customers
+        description: Customers who went from positive MRR to zero in the period.
+        type: simple
+        label: Churned Customers
+        agg: sum
+        expr: is_churned_customer
+        fill_nulls_with: 0
+      - name: reactivated_customers
+        description: Customers who returned to paid MRR after a churn month.
+        type: simple
+        label: Reactivated Customers
+        agg: sum
+        expr: is_reactivated_customer
+        fill_nulls_with: 0
+      - name: enterprise_ending_mrr
+        description: Ending MRR for Enterprise-segment customers.
+        type: simple
+        label: Enterprise Ending MRR
+        agg: sum
+        expr: ending_mrr
+        filter: |
+          {{ Dimension('customer_month__customer_segment') }} = 'Enterprise'
+        non_additive_dimension:
+          name: month_start
+          window_agg: max
+      - name: smb_ending_mrr
+        description: Ending MRR for SMB-segment customers.
+        type: simple
+        label: SMB Ending MRR
+        agg: sum
+        expr: ending_mrr
+        filter: |
+          {{ Dimension('customer_month__customer_segment') }} = 'SMB'
+        non_additive_dimension:
+          name: month_start
+          window_agg: max
+      - name: self_serve_ending_mrr
+        description: Ending MRR from customers originally acquired via self-serve.
+        type: simple
+        label: Self-serve Ending MRR
+        agg: sum
+        expr: ending_mrr
+        filter: |
+          {{ Dimension('customer_month__acquisition_channel') }} = 'self_serve'
+        non_additive_dimension:
+          name: month_start
+          window_agg: max
+
+  - name: fct_mrr_movements
+    description: Additive MRR bridge events excluding retained months.
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - customer_id
+            - month_start
+    semantic_model:
+      enabled: true
+      name: mrr_movements
+    agg_time_dimension: month_start
+    columns:
+      - name: mrr_movement_id
+        tests:
+          - unique
+          - not_null
+        entity:
+          type: primary
+          name: mrr_movement
+      - name: customer_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_customers')
+              field: customer_id
+        entity:
+          type: foreign
+          name: customer
+      - name: month_start
+        tests:
+          - not_null
+        granularity: month
+        dimension:
+          type: time
+          name: month_start
+      - name: movement_type
+        tests:
+          - accepted_values:
+              values: ["new", "expansion", "contraction", "churn", "reactivation"]
+        dimension:
+          type: categorical
+          name: movement_type
+      - name: plan_name
+        dimension:
+          type: categorical
+          name: movement_plan
+    metrics:
+      - name: mrr_movement_count
+        description: Count of customer-month commercial movements, excluding retained months.
+        type: simple
+        label: MRR Movement Count
+        agg: count
+        expr: 1
+      - name: expansion_movement_count
+        description: Customer-months classified as expansion.
+        type: simple
+        label: Expansion Movement Count
+        agg: count
+        expr: 1
+        filter: |
+          {{ Dimension('mrr_movement__movement_type') }} = 'expansion'
+
+  - name: fct_invoices
+    description: One row per invoice. Revenue metrics use paid invoices unless noted.
+    semantic_model:
+      enabled: true
+      name: invoices
+    agg_time_dimension: invoice_date
+    columns:
+      - name: invoice_id
+        tests:
+          - unique
+          - not_null
+        entity:
+          type: primary
+          name: invoice
+      - name: customer_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_customers')
+              field: customer_id
+        entity:
+          type: foreign
+          name: customer
+      - name: invoice_date
+        tests:
+          - not_null
+        granularity: day
+        dimension:
+          type: time
+          name: invoice_date
+      - name: invoice_status
+        tests:
+          - accepted_values:
+              values: ["paid", "open", "void", "uncollectible"]
+        dimension:
+          type: categorical
+          name: invoice_status
+      - name: invoice_size_tier
+        tests:
+          - accepted_values:
+              values: ["small", "medium", "large"]
+        dimension:
+          type: categorical
+          name: invoice_size_tier
+      - name: country_code
+        dimension:
+          type: categorical
+          name: country
+      - name: region
+        dimension:
+          type: categorical
+          name: region
+      - name: segment
+        dimension:
+          type: categorical
+          name: customer_segment
+      - name: acquisition_channel
+        dimension:
+          type: categorical
+          name: acquisition_channel
+    derived_semantics:
+      dimensions:
+        - name: is_overdue_open
+          type: categorical
+          expr: "invoice_status = 'open' and due_date < date '2026-08-31'"
+    metrics:
+      - name: invoice_count
+        description: Number of invoices issued, including unpaid and void.
+        type: simple
+        label: Invoice Count
+        agg: count
+        expr: 1
+        join_to_timespine: true
+        fill_nulls_with: 0
+      - name: paid_invoice_count
+        description: Invoices collected in full.
+        type: simple
+        label: Paid Invoice Count
+        agg: sum
+        expr: is_paid
+        fill_nulls_with: 0
+      - name: billed_amount
+        description: Invoice totals excluding void invoices.
+        type: simple
+        label: Billed Amount
+        agg: sum
+        expr: total_amount
+        filter: |
+          {{ Dimension('invoice__invoice_status') }} != 'void'
+      - name: revenue
+        description: Collected invoice revenue from paid invoices.
+        type: simple
+        label: Revenue
+        agg: sum
+        expr: paid_amount
+        fill_nulls_with: 0
+      - name: average_invoice_value
+        description: Average paid invoice total.
+        type: simple
+        label: Average Invoice Value
+        agg: average
+        expr: total_amount
+        filter: |
+          {{ Dimension('invoice__invoice_status') }} = 'paid'
+      - name: large_invoice_revenue
+        description: Collected revenue from invoices of $2,000 or more.
+        type: simple
+        label: Large Invoice Revenue
+        agg: sum
+        expr: paid_amount
+        filter: |
+          {{ Dimension('invoice__invoice_size_tier') }} = 'large'
+      - name: open_invoice_amount
+        description: Total of invoices still open.
+        type: simple
+        label: Open Invoice Amount
+        agg: sum
+        expr: total_amount
+        filter: |
+          {{ Dimension('invoice__invoice_status') }} = 'open'
+      - name: median_invoice_value
+        description: Median paid invoice total.
+        type: simple
+        label: Median Invoice Value
+        agg: median
+        expr: total_amount
+        filter: |
+          {{ Dimension('invoice__invoice_status') }} = 'paid'
+
+  - name: fct_invoice_items
+    description: Invoice line items including subscription, add-on, and one-time charges.
+    semantic_model:
+      enabled: true
+      name: invoice_items
+    agg_time_dimension: invoice_date
+    columns:
+      - name: invoice_item_id
+        tests:
+          - unique
+          - not_null
+        entity:
+          type: primary
+          name: invoice_item
+      - name: invoice_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('fct_invoices')
+              field: invoice_id
+        entity:
+          type: foreign
+          name: invoice
+      - name: customer_id
+        tests:
+          - not_null
+        entity:
+          type: foreign
+          name: customer
+      - name: plan_id
+        entity:
+          type: foreign
+          name: plan
+      - name: invoice_date
+        tests:
+          - not_null
+        granularity: day
+        dimension:
+          type: time
+          name: invoice_date
+      - name: item_type
+        tests:
+          - accepted_values:
+              values: ["subscription", "addon", "one_time"]
+        dimension:
+          type: categorical
+          name: item_type
+      - name: invoice_status
+        dimension:
+          type: categorical
+          name: invoice_status
+      - name: plan_name
+        dimension:
+          type: categorical
+          name: item_plan
+      - name: amount_band
+        dimension:
+          type: categorical
+          name: amount_band
+    metrics:
+      - name: line_item_amount
+        description: Gross line-item amount regardless of invoice status.
+        type: simple
+        label: Line Item Amount
+        agg: sum
+        expr: amount
+      - name: subscription_revenue
+        description: Paid revenue from subscription line items.
+        type: simple
+        label: Subscription Revenue
+        agg: sum
+        expr: paid_amount
+        filter: |
+          {{ Dimension('invoice_item__item_type') }} = 'subscription'
+      - name: addon_revenue
+        description: Paid revenue from add-on line items.
+        type: simple
+        label: Add-on Revenue
+        agg: sum
+        expr: paid_amount
+        filter: |
+          {{ Dimension('invoice_item__item_type') }} = 'addon'
+      - name: one_time_revenue
+        description: Paid revenue from implementation and other one-time fees.
+        type: simple
+        label: One-time Revenue
+        agg: sum
+        expr: paid_amount
+        filter: |
+          {{ Dimension('invoice_item__item_type') }} = 'one_time'
+      - name: high_value_line_item_amount
+        description: Paid amount from line items of $1,000 or more.
+        type: simple
+        label: High Value Line Item Amount
+        agg: sum
+        expr: paid_amount
+        filter: |
+          {{ Dimension('invoice_item__amount_band') }} = 'gte_1000'

@@ -1,0 +1,571 @@
+customer_id,customer_code,organisation_name,country_code,country_name,region,subregion,industry,employee_count,segment,acquisition_channel,signup_date,trial_start_date,status
+1,cus_000001,Lumen Partners SAS,FR,France,Europe,Western Europe,professional_services,12,SMB,inbound,2025-07-01,,active
+2,cus_000002,Silver Clinics AG,DE,Germany,Europe,DACH,financial_services,28,SMB,self_serve,2024-08-15,2024-07-25,churned
+3,cus_000003,Beacon Group Pty Ltd,AU,Australia,APAC,Australia,healthcare,21,SMB,self_serve,2023-01-03,,churned
+4,cus_000004,Lumen Studios Ltd,CA,Canada,North America,Canada,healthcare,122,Mid-Market,self_serve,2024-03-24,2024-03-10,active
+5,cus_000005,Coastal Properties Inc,CA,Canada,North America,Canada,,23,SMB,self_serve,2026-05-27,2026-05-13,active
+6,cus_000006,Blue Solutions GmbH,DE,Germany,Europe,DACH,manufacturing,48,SMB,self_serve,2023-11-01,2023-10-11,active
+7,cus_000007,Forge Engineering Corp,US,United States,North America,West,professional_services,21,SMB,self_serve,2025-11-25,2025-11-11,active
+8,cus_000008,North Properties LLP,GB,United Kingdom,Europe,United Kingdom,manufacturing,22,SMB,self_serve,2024-09-25,,active
+9,cus_000009,Pioneer Retail AB,SE,Sweden,Europe,Nordics,logistics,50,Mid-Market,inbound,2025-06-16,,active
+10,cus_000010,Atlas Properties Corp,US,United States,North America,West,construction,15,SMB,partner,2026-02-08,,churned
+11,cus_000011,Pacific Studios Pty Ltd,AU,Australia,APAC,Australia,logistics,56,Mid-Market,outbound,2026-05-03,,active
+12,cus_000012,Metro Works Pty Ltd,AU,Australia,APAC,Australia,logistics,7179,Enterprise,outbound,2026-06-02,,active
+13,cus_000013,Atlas Solutions SAS,FR,France,Europe,Western Europe,professional_services,675,Enterprise,outbound,2023-08-10,,active
+14,cus_000014,Maple Workshops Corp,US,United States,North America,South,professional_services,864,Enterprise,partner,2026-05-01,,active
+15,cus_000015,River Properties Inc,US,United States,North America,Northeast,retail,138,Mid-Market,self_serve,2026-01-12,2025-12-29,active
+16,cus_000016,Forge Solutions Corp,US,United States,North America,South,healthcare,150,Mid-Market,inbound,2025-08-31,,active
+17,cus_000017,Bright Ventures Corp,US,United States,North America,Northeast,facilities,1008,Enterprise,inbound,2023-09-19,,active
+18,cus_000018,Oak Networks Inc,CA,Canada,North America,Canada,facilities,75,Mid-Market,self_serve,2026-06-29,,active
+19,cus_000019,Urban Systems LLC,US,United States,North America,South,retail,133,Mid-Market,partner,2025-07-23,,active
+20,cus_000020,Nimbus Solutions Pty Ltd,AU,Australia,APAC,Australia,facilities,32,SMB,self_serve,2026-06-03,,active
+21,cus_000021,Iron Group GmbH,DE,Germany,Europe,DACH,healthcare,10,SMB,self_serve,2026-02-14,,active
+22,cus_000022,Granite Ventures AB,SE,Sweden,Europe,Nordics,professional_services,49,SMB,inbound,2023-04-24,,churned
+23,cus_000023,Beacon Properties Inc,CA,Canada,North America,Canada,manufacturing,15,SMB,self_serve,2022-12-01,2022-11-24,churned
+24,cus_000024,Summit Advisory SAS,FR,France,Europe,Western Europe,education,33,SMB,inbound,2023-01-01,,churned
+25,cus_000025,Prairie Logistics LLP,GB,United Kingdom,Europe,United Kingdom,healthcare,35,SMB,event,2025-04-23,,churned
+26,cus_000026,Forge Networks Ltd,GB,United Kingdom,Europe,United Kingdom,construction,61,Mid-Market,event,2025-11-25,,active
+27,cus_000027,Harbour Solutions LLP,GB,United Kingdom,Europe,United Kingdom,manufacturing,50,Mid-Market,partner,2024-04-18,,active
+28,cus_000028,Amber Networks GmbH,DE,Germany,Europe,DACH,education,25,SMB,self_serve,2025-09-03,2025-08-13,active
+29,cus_000029,North Industries B.V.,NL,Netherlands,Europe,Western Europe,facilities,32,SMB,self_serve,2025-01-25,2025-01-11,churned
+30,cus_000030,Vertex Solutions Inc,CA,Canada,North America,Canada,professional_services,9,SMB,event,2025-03-04,,churned
+31,cus_000031,Forest Studios LLC,US,United States,North America,South,logistics,50,Mid-Market,self_serve,2023-07-31,2023-07-17,active
+32,cus_000032,Nimbus Clinics AB,SE,Sweden,Europe,Nordics,logistics,526,Enterprise,partner,2024-05-09,,active
+33,cus_000033,Forge Labs Inc,US,United States,North America,Northeast,professional_services,46,SMB,partner,2026-08-05,,active
+34,cus_000034,Prairie Services LLC,US,United States,North America,West,logistics,102,Mid-Market,self_serve,2025-03-24,2025-03-10,active
+35,cus_000035,Urban Logistics AG,DE,Germany,Europe,DACH,professional_services,96,Mid-Market,partner,2025-08-06,,churned
+36,cus_000036,Vertex Holdings Inc,US,United States,North America,West,professional_services,32,SMB,self_serve,2024-04-17,2024-04-03,active
+37,cus_000037,Bright Studios Corp,US,United States,North America,Northeast,facilities,1060,Enterprise,partner,2025-08-27,,active
+38,cus_000038,Copper Logistics Corp,US,United States,North America,Midwest,education,123,Mid-Market,outbound,2023-02-07,,active
+39,cus_000039,Vertex Solutions AG,DE,Germany,Europe,DACH,logistics,6,SMB,partner,2024-01-06,,active
+40,cus_000040,Copper Industries AB,SE,Sweden,Europe,Nordics,professional_services,45,SMB,inbound,2025-06-05,,active
+41,cus_000041,Bright Collective Corp,US,United States,North America,Northeast,professional_services,45,SMB,self_serve,2023-02-05,,churned
+42,cus_000042,Iron Partners LLP,GB,United Kingdom,Europe,United Kingdom,education,61,Mid-Market,outbound,2022-07-02,,active
+43,cus_000043,Oak Workshops Pty Ltd,AU,Australia,APAC,Australia,manufacturing,31,SMB,inbound,2022-10-18,,churned
+44,cus_000044,Metro Systems Corp,US,United States,North America,Midwest,manufacturing,1813,Enterprise,inbound,2023-12-15,,active
+45,cus_000045,Urban Labs LLC,US,United States,North America,West,healthcare,45,SMB,inbound,2025-12-22,,active
+46,cus_000046,Lumen Fabrication Inc,CA,Canada,North America,Canada,healthcare,205,Mid-Market,inbound,2024-11-19,,active
+47,cus_000047,Pacific Supply Corp,US,United States,North America,Northeast,healthcare,2303,Enterprise,outbound,2026-01-10,,active
+48,cus_000048,Golden Labs Corp,US,United States,North America,South,logistics,33,SMB,inbound,2025-03-31,,churned
+49,cus_000049,Silver Networks LLC,US,United States,North America,West,manufacturing,838,Enterprise,partner,2026-06-22,,active
+50,cus_000050,Forge Logistics Corp,US,United States,North America,Northeast,logistics,30,SMB,self_serve,2023-11-02,2023-10-26,churned
+51,cus_000051,Metro Retail Inc,US,United States,North America,Northeast,manufacturing,50,Mid-Market,partner,2024-02-03,,active
+52,cus_000052,Pacific Solutions GmbH,DE,Germany,Europe,DACH,manufacturing,639,Enterprise,partner,2023-11-11,,active
+53,cus_000053,Vertex Engineering Ltd,GB,United Kingdom,Europe,United Kingdom,professional_services,39,SMB,inbound,2022-08-22,,churned
+54,cus_000054,Silver Retail LLP,GB,United Kingdom,Europe,United Kingdom,professional_services,42,SMB,event,2023-04-28,,churned
+55,cus_000055,River Retail Inc,CA,Canada,North America,Canada,retail,23,SMB,self_serve,2025-04-14,,churned
+56,cus_000056,Pioneer Clinics Ltd,CA,Canada,North America,Canada,construction,11,SMB,self_serve,2025-07-01,2025-06-17,churned
+57,cus_000057,Prairie Clinics SARL,FR,France,Europe,Western Europe,logistics,77,Mid-Market,self_serve,2024-09-07,,active
+58,cus_000058,Amber Ventures Inc,US,United States,North America,Northeast,facilities,27,SMB,partner,2026-02-20,,active
+59,cus_000059,Canyon Services AG,DE,Germany,Europe,DACH,education,55,Mid-Market,outbound,2025-06-28,,active
+60,cus_000060,Canyon Services GmbH,DE,Germany,Europe,DACH,manufacturing,16,SMB,inbound,2025-09-03,,active
+61,cus_000061,Coastal Industries LLP,GB,United Kingdom,Europe,United Kingdom,professional_services,593,Enterprise,partner,2024-11-28,,active
+62,cus_000062,Amber Studios Inc,US,United States,North America,Northeast,professional_services,59,Mid-Market,inbound,2026-03-04,,active
+63,cus_000063,Bright Labs LLP,GB,United Kingdom,Europe,United Kingdom,professional_services,7,SMB,self_serve,2025-11-19,,active
+64,cus_000064,Copper Logistics Pty Ltd,AU,Australia,APAC,Australia,facilities,35,SMB,partner,2026-07-31,,active
+65,cus_000065,Coastal Logistics Corp,US,United States,North America,West,professional_services,21,SMB,inbound,2026-05-31,,active
+66,cus_000066,Forest Retail Pty Ltd,AU,Australia,APAC,Australia,professional_services,37,SMB,outbound,2025-10-08,,churned
+67,cus_000067,Lumen Logistics Inc,US,United States,North America,Northeast,professional_services,500,Enterprise,inbound,2026-02-24,,active
+68,cus_000068,Blue Solutions Ltd,CA,Canada,North America,Canada,professional_services,163,Mid-Market,partner,2025-08-01,,active
+69,cus_000069,Maple Partners Pty Ltd,AU,Australia,APAC,Australia,manufacturing,30,SMB,inbound,2023-06-29,,churned
+70,cus_000070,Anchor Industries Inc,US,United States,North America,South,manufacturing,39,SMB,inbound,2023-08-13,,churned
+71,cus_000071,Forge Retail AG,DE,Germany,Europe,DACH,professional_services,500,Enterprise,outbound,2026-08-19,,active
+72,cus_000072,Apex Holdings LLC,US,United States,North America,Midwest,construction,13,SMB,self_serve,2023-01-17,2023-01-03,churned
+73,cus_000073,Urban Networks Corp,US,United States,North America,South,retail,16,SMB,self_serve,2024-01-29,2024-01-08,active
+74,cus_000074,Copper Ventures B.V.,NL,Netherlands,Europe,Western Europe,professional_services,75,Mid-Market,outbound,2023-05-19,,churned
+75,cus_000075,Maple Solutions AB,SE,Sweden,Europe,Nordics,facilities,13,SMB,outbound,2025-09-24,,churned
+76,cus_000076,Harbour Works Ltd,CA,Canada,North America,Canada,financial_services,711,Enterprise,inbound,2025-03-28,,active
+77,cus_000077,North Solutions LLP,GB,United Kingdom,Europe,United Kingdom,construction,79,Mid-Market,inbound,2024-11-06,,active
+78,cus_000078,Summit Works Inc,US,United States,North America,West,manufacturing,12,SMB,self_serve,2023-04-30,2023-04-16,churned
+79,cus_000079,Lumen Engineering Ltd,GB,United Kingdom,Europe,United Kingdom,professional_services,45,SMB,self_serve,2025-10-16,2025-10-02,active
+80,cus_000080,Pioneer Studios SARL,FR,France,Europe,Western Europe,construction,30,SMB,self_serve,2025-10-11,2025-10-04,active
+81,cus_000081,Maple Retail AB,SE,Sweden,Europe,Nordics,healthcare,29,SMB,event,2025-08-25,,active
+82,cus_000082,Prairie Retail Pty Ltd,AU,Australia,APAC,Australia,,50,Mid-Market,outbound,2026-06-09,,active
+83,cus_000083,Forge Group Ltd,CA,Canada,North America,Canada,manufacturing,43,SMB,inbound,2025-03-27,,churned
+84,cus_000084,Silver Clinics Inc,US,United States,North America,South,logistics,13,SMB,self_serve,2026-06-22,2026-06-08,churned
+85,cus_000085,Pioneer Collective LLC,US,United States,North America,South,logistics,52,Mid-Market,outbound,2023-08-05,,active
+86,cus_000086,Beacon Works LLC,US,United States,North America,West,manufacturing,65,Mid-Market,inbound,2024-12-03,,active
+87,cus_000087,Nimbus Properties B.V.,NL,Netherlands,Europe,Western Europe,construction,48,SMB,self_serve,2024-09-12,2024-08-29,churned
+88,cus_000088,Forest Networks SAS,FR,France,Europe,Western Europe,logistics,1234,Enterprise,inbound,2025-04-01,,active
+89,cus_000089,Iron Ventures Ltd,GB,United Kingdom,Europe,United Kingdom,professional_services,153,Mid-Market,inbound,2025-02-04,,active
+90,cus_000090,Summit Studios LLP,GB,United Kingdom,Europe,United Kingdom,education,23,SMB,self_serve,2024-11-20,2024-11-13,churned
+91,cus_000091,Golden Retail Corp,US,United States,North America,Northeast,facilities,500,Enterprise,inbound,2023-07-16,,active
+92,cus_000092,Vertex Systems SARL,FR,France,Europe,Western Europe,logistics,14,SMB,self_serve,2023-08-21,,churned
+93,cus_000093,Cedar Solutions LLP,GB,United Kingdom,Europe,United Kingdom,financial_services,2323,Enterprise,inbound,2023-01-07,,active
+94,cus_000094,Atlas Engineering AB,SE,Sweden,Europe,Nordics,logistics,500,Enterprise,event,2024-05-07,,active
+95,cus_000095,Forest Labs AB,SE,Sweden,Europe,Nordics,logistics,849,Enterprise,outbound,2025-02-07,,active
+96,cus_000096,Vertex Studios Corp,US,United States,North America,Northeast,manufacturing,23,SMB,event,2023-08-10,,active
+97,cus_000097,Vertex Partners LLC,US,United States,North America,West,facilities,736,Enterprise,outbound,2023-11-19,,active
+98,cus_000098,Maple Studios LLC,US,United States,North America,South,professional_services,17,SMB,self_serve,2024-11-22,2024-11-08,active
+99,cus_000099,Summit Operations SARL,FR,France,Europe,Western Europe,education,26,SMB,self_serve,2026-05-30,2026-05-23,active
+100,cus_000100,Anchor Fabrication Corp,US,United States,North America,Midwest,logistics,20,SMB,self_serve,2024-09-05,2024-08-15,churned
+101,cus_000101,Forge Ventures LLC,US,United States,North America,Midwest,construction,822,Enterprise,outbound,2024-12-13,,active
+102,cus_000102,Beacon Studios AB,SE,Sweden,Europe,Nordics,construction,500,Enterprise,inbound,2025-11-24,,active
+103,cus_000103,Copper Collective Corp,US,United States,North America,Midwest,construction,49,SMB,self_serve,2025-12-16,2025-12-02,active
+104,cus_000104,Harbour Studios Corp,US,United States,North America,South,healthcare,15,SMB,outbound,2023-07-24,,churned
+105,cus_000105,Amber Holdings Ltd,GB,United Kingdom,Europe,United Kingdom,professional_services,110,Mid-Market,partner,2025-08-11,,churned
+106,cus_000106,Atlas Collective Inc,CA,Canada,North America,Canada,education,30,SMB,inbound,2024-08-15,,active
+107,cus_000107,Coastal Collective Pty Ltd,AU,Australia,APAC,Australia,financial_services,104,Mid-Market,inbound,2025-05-15,,active
+108,cus_000108,Blue Works SARL,FR,France,Europe,Western Europe,professional_services,27,SMB,outbound,2026-02-18,,churned
+109,cus_000109,Apex Partners Corp,US,United States,North America,South,healthcare,44,SMB,event,2025-05-22,,active
+110,cus_000110,Pacific Clinics LLC,US,United States,North America,Midwest,retail,30,SMB,self_serve,2024-09-09,2024-09-02,churned
+111,cus_000111,Summit Properties AB,SE,Sweden,Europe,Nordics,education,45,SMB,self_serve,2025-04-12,,active
+112,cus_000112,Nimbus Workshops Ltd,CA,Canada,North America,Canada,facilities,47,SMB,inbound,2024-03-30,,active
+113,cus_000113,Urban Fabrication AB,SE,Sweden,Europe,Nordics,professional_services,500,Enterprise,event,2026-04-11,,active
+114,cus_000114,Atlas Properties Pty Ltd,AU,Australia,APAC,Australia,financial_services,14,SMB,inbound,2024-06-11,,churned
+115,cus_000115,Coastal Studios AG,DE,Germany,Europe,DACH,manufacturing,50,Mid-Market,partner,2024-08-02,,churned
+116,cus_000116,North Supply Corp,US,United States,North America,Northeast,construction,33,SMB,self_serve,2025-11-03,2025-10-20,active
+117,cus_000117,Pacific Industries Corp,US,United States,North America,West,professional_services,45,SMB,self_serve,2025-01-31,,active
+118,cus_000118,Blue Group LLP,GB,United Kingdom,Europe,United Kingdom,financial_services,3497,Enterprise,outbound,2024-09-02,,active
+119,cus_000119,Pacific Supply Inc,CA,Canada,North America,Canada,logistics,787,Enterprise,inbound,2025-01-27,,active
+120,cus_000120,Urban Solutions Corp,US,United States,North America,Midwest,professional_services,94,Mid-Market,self_serve,2024-05-13,2024-04-29,active
+121,cus_000121,Copper Group SAS,FR,France,Europe,Western Europe,construction,38,SMB,outbound,2026-03-08,,active
+122,cus_000122,Nimbus Labs LLC,US,United States,North America,South,healthcare,801,Enterprise,outbound,2024-04-17,,active
+123,cus_000123,Alpine Collective Ltd,CA,Canada,North America,Canada,logistics,33,SMB,self_serve,2025-02-09,2025-01-26,active
+124,cus_000124,Beacon Systems Ltd,CA,Canada,North America,Canada,education,38,SMB,inbound,2026-05-28,,active
+125,cus_000125,Cedar Partners GmbH,DE,Germany,Europe,DACH,manufacturing,18,SMB,self_serve,2024-10-24,2024-10-10,churned
+126,cus_000126,Cedar Clinics GmbH,DE,Germany,Europe,DACH,healthcare,25,SMB,self_serve,2026-02-12,2026-01-29,active
+127,cus_000127,Alpine Engineering SARL,FR,France,Europe,Western Europe,construction,47,SMB,inbound,2024-06-08,,churned
+128,cus_000128,Forest Workshops Corp,US,United States,North America,Northeast,financial_services,70,Mid-Market,outbound,2023-12-05,,active
+129,cus_000129,Nimbus Systems Pty Ltd,AU,Australia,APAC,Australia,logistics,854,Enterprise,outbound,2026-02-18,,active
+130,cus_000130,Pioneer Fabrication Ltd,CA,Canada,North America,Canada,logistics,13,SMB,self_serve,2026-05-23,2026-05-02,active
+131,cus_000131,Anchor Advisory Inc,US,United States,North America,West,professional_services,16,SMB,self_serve,2025-01-31,2025-01-17,active
+132,cus_000132,Lumen Engineering B.V.,NL,Netherlands,Europe,Western Europe,logistics,38,SMB,inbound,2025-01-07,,churned
+133,cus_000133,Pioneer Partners Pty Ltd,AU,Australia,APAC,Australia,manufacturing,160,Mid-Market,partner,2024-12-03,,active
+134,cus_000134,Alpine Workshops Inc,US,United States,North America,West,professional_services,31,SMB,inbound,2025-07-13,,active
+135,cus_000135,Canyon Industries Pty Ltd,AU,Australia,APAC,Australia,facilities,2208,Enterprise,event,2024-09-11,,active
+136,cus_000136,Forge Labs Corp,US,United States,North America,Northeast,professional_services,24,SMB,self_serve,2026-02-17,2026-02-03,churned
+137,cus_000137,Oak Industries Corp,US,United States,North America,Midwest,healthcare,41,SMB,partner,2025-12-29,,churned
+138,cus_000138,Amber Group Corp,US,United States,North America,Northeast,logistics,13,SMB,self_serve,2026-04-25,2026-04-11,active
+139,cus_000139,Pioneer Supply Inc,US,United States,North America,South,financial_services,86,Mid-Market,inbound,2025-07-21,,active
+140,cus_000140,Summit Retail Inc,US,United States,North America,West,retail,292,Mid-Market,partner,2025-01-17,,active
+141,cus_000141,Anchor Ventures AG,DE,Germany,Europe,DACH,facilities,10,SMB,partner,2023-10-30,,active
+142,cus_000142,River Properties GmbH,DE,Germany,Europe,DACH,facilities,50,Mid-Market,self_serve,2026-07-05,2026-06-21,active
+143,cus_000143,Summit Supply SARL,FR,France,Europe,Western Europe,professional_services,10,SMB,inbound,2026-03-24,,active
+144,cus_000144,Granite Fabrication Ltd,GB,United Kingdom,Europe,United Kingdom,construction,56,Mid-Market,inbound,2023-05-02,,active
+145,cus_000145,Harbour Workshops Inc,US,United States,North America,West,construction,77,Mid-Market,outbound,2023-01-04,,churned
+146,cus_000146,Copper Workshops Corp,US,United States,North America,West,professional_services,105,Mid-Market,inbound,2026-01-17,,active
+147,cus_000147,Alpine Industries AB,SE,Sweden,Europe,Nordics,manufacturing,9,SMB,partner,2023-02-08,,active
+148,cus_000148,Copper Holdings Inc,US,United States,North America,South,healthcare,239,Mid-Market,inbound,2023-02-10,,active
+149,cus_000149,Harbour Studios Inc,US,United States,North America,West,financial_services,115,Mid-Market,outbound,2024-04-15,,churned
+150,cus_000150,Forest Solutions Corp,US,United States,North America,West,retail,178,Mid-Market,self_serve,2024-10-04,2024-09-27,active
+151,cus_000151,Beacon Industries Corp,US,United States,North America,Northeast,professional_services,14,SMB,self_serve,2025-07-05,2025-06-28,churned
+152,cus_000152,Beacon Collective Pty Ltd,AU,Australia,APAC,Australia,professional_services,9,SMB,self_serve,2024-01-23,2024-01-02,active
+153,cus_000153,Canyon Works Corp,US,United States,North America,South,logistics,53,Mid-Market,outbound,2023-10-29,,churned
+154,cus_000154,Blue Studios Corp,US,United States,North America,West,manufacturing,6,SMB,self_serve,2026-03-11,,churned
+155,cus_000155,North Services Inc,US,United States,North America,West,facilities,31,SMB,self_serve,2024-09-09,,churned
+156,cus_000156,Golden Retail Pty Ltd,AU,Australia,APAC,Australia,logistics,15,SMB,self_serve,2025-03-21,2025-03-07,active
+157,cus_000157,Cedar Networks LLC,US,United States,North America,South,healthcare,787,Enterprise,partner,2025-12-22,,active
+158,cus_000158,Apex Systems Inc,US,United States,North America,West,manufacturing,42,SMB,self_serve,2026-05-21,2026-05-07,churned
+159,cus_000159,Maple Collective LLC,US,United States,North America,Midwest,healthcare,48,SMB,partner,2025-10-04,,active
+160,cus_000160,Alpine Group LLC,US,United States,North America,Midwest,,18,SMB,self_serve,2025-08-24,,active
+161,cus_000161,Granite Engineering LLC,US,United States,North America,South,professional_services,26,SMB,self_serve,2026-06-25,,active
+162,cus_000162,Canyon Labs AB,SE,Sweden,Europe,Nordics,manufacturing,47,SMB,self_serve,2026-01-16,2026-01-02,churned
+163,cus_000163,Forest Fabrication GmbH,DE,Germany,Europe,DACH,logistics,116,Mid-Market,outbound,2024-10-06,,churned
+164,cus_000164,Harbour Workshops LLC,US,United States,North America,Northeast,financial_services,25,SMB,inbound,2025-04-13,,active
+165,cus_000165,Pacific Retail GmbH,DE,Germany,Europe,DACH,logistics,1130,Enterprise,outbound,2024-11-02,,active
+166,cus_000166,Cedar Studios B.V.,NL,Netherlands,Europe,Western Europe,construction,19,SMB,self_serve,2025-04-09,2025-03-26,churned
+167,cus_000167,Oak Clinics SAS,FR,France,Europe,Western Europe,professional_services,95,Mid-Market,partner,2024-09-30,,churned
+168,cus_000168,River Operations LLC,US,United States,North America,South,facilities,49,SMB,self_serve,2025-02-12,2025-01-29,churned
+169,cus_000169,Forge Studios Pty Ltd,AU,Australia,APAC,Australia,retail,158,Mid-Market,partner,2025-03-26,,active
+170,cus_000170,Maple Systems AB,SE,Sweden,Europe,Nordics,retail,40,SMB,inbound,2025-06-12,,churned
+171,cus_000171,Alpine Works LLP,GB,United Kingdom,Europe,United Kingdom,professional_services,157,Mid-Market,inbound,2024-05-22,,churned
+172,cus_000172,Bright Solutions LLC,US,United States,North America,Midwest,facilities,79,Mid-Market,partner,2022-12-07,,active
+173,cus_000173,Coastal Retail AB,SE,Sweden,Europe,Nordics,financial_services,87,Mid-Market,partner,2025-06-29,,churned
+174,cus_000174,Summit Advisory LLC,US,United States,North America,South,healthcare,33,SMB,self_serve,2026-08-10,2026-08-03,active
+175,cus_000175,North Retail Corp,US,United States,North America,Northeast,professional_services,87,Mid-Market,inbound,2023-07-15,,churned
+176,cus_000176,Maple Industries SARL,FR,France,Europe,Western Europe,logistics,760,Enterprise,partner,2023-10-18,,active
+177,cus_000177,Bright Holdings Pty Ltd,AU,Australia,APAC,Australia,professional_services,50,Mid-Market,partner,2026-07-30,,active
+178,cus_000178,Lumen Networks Inc,US,United States,North America,Northeast,professional_services,40,SMB,inbound,2024-08-05,,active
+179,cus_000179,Blue Services LLC,US,United States,North America,South,healthcare,7,SMB,self_serve,2022-08-12,2022-07-29,churned
+180,cus_000180,Urban Solutions Pty Ltd,AU,Australia,APAC,Australia,facilities,13,SMB,inbound,2026-08-18,,active
+181,cus_000181,Blue Services Inc,US,United States,North America,South,construction,90,Mid-Market,event,2026-04-30,,active
+182,cus_000182,Pacific Ventures Corp,US,United States,North America,West,retail,1282,Enterprise,outbound,2023-08-05,,active
+183,cus_000183,Metro Engineering Ltd,CA,Canada,North America,Canada,retail,45,SMB,inbound,2022-09-26,,active
+184,cus_000184,North Networks AB,SE,Sweden,Europe,Nordics,logistics,23,SMB,event,2024-08-08,,churned
+185,cus_000185,Canyon Labs Ltd,CA,Canada,North America,Canada,professional_services,94,Mid-Market,outbound,2024-10-14,,active
+186,cus_000186,Blue Studios AB,SE,Sweden,Europe,Nordics,manufacturing,707,Enterprise,outbound,2026-03-17,,active
+187,cus_000187,Bright Supply SAS,FR,France,Europe,Western Europe,construction,559,Enterprise,partner,2025-03-27,,active
+188,cus_000188,Beacon Workshops Pty Ltd,AU,Australia,APAC,Australia,healthcare,35,SMB,self_serve,2026-02-04,,active
+189,cus_000189,North Clinics LLP,GB,United Kingdom,Europe,United Kingdom,facilities,52,Mid-Market,outbound,2023-07-18,,active
+190,cus_000190,Atlas Industries Inc,US,United States,North America,Midwest,logistics,30,SMB,partner,2024-12-18,,churned
+191,cus_000191,River Retail GmbH,DE,Germany,Europe,DACH,financial_services,31,SMB,self_serve,2025-03-17,,churned
+192,cus_000192,Apex Retail Inc,CA,Canada,North America,Canada,professional_services,598,Enterprise,partner,2024-02-04,,churned
+193,cus_000193,Harbour Engineering SARL,FR,France,Europe,Western Europe,logistics,28,SMB,self_serve,2024-05-28,2024-05-14,churned
+194,cus_000194,Harbour Studios AB,SE,Sweden,Europe,Nordics,professional_services,989,Enterprise,inbound,2022-12-31,,churned
+195,cus_000195,Amber Collective LLC,US,United States,North America,Midwest,logistics,23,SMB,partner,2026-05-26,,active
+196,cus_000196,Lumen Ventures AG,DE,Germany,Europe,DACH,professional_services,7,SMB,inbound,2023-01-07,,churned
+197,cus_000197,Anchor Solutions Pty Ltd,AU,Australia,APAC,Australia,professional_services,87,Mid-Market,inbound,2022-11-04,,churned
+198,cus_000198,Pioneer Collective Ltd,GB,United Kingdom,Europe,United Kingdom,professional_services,9,SMB,self_serve,2026-07-14,2026-07-07,active
+199,cus_000199,Coastal Operations LLP,GB,United Kingdom,Europe,United Kingdom,professional_services,25,SMB,event,2025-11-30,,active
+200,cus_000200,Anchor Operations Corp,US,United States,North America,West,financial_services,500,Enterprise,partner,2026-08-13,,active
+201,cus_000201,Amber Clinics Inc,US,United States,North America,Northeast,healthcare,65,Mid-Market,self_serve,2024-03-01,2024-02-16,active
+202,cus_000202,Golden Fabrication LLP,GB,United Kingdom,Europe,United Kingdom,manufacturing,49,SMB,self_serve,2026-08-20,,active
+203,cus_000203,Vertex Industries LLC,US,United States,North America,Midwest,financial_services,133,Mid-Market,inbound,2024-09-01,,active
+204,cus_000204,Metro Supply Ltd,GB,United Kingdom,Europe,United Kingdom,professional_services,20,SMB,self_serve,2026-06-04,2026-05-14,active
+205,cus_000205,Forge Clinics Pty Ltd,AU,Australia,APAC,Australia,manufacturing,35,SMB,inbound,2025-05-01,,active
+206,cus_000206,Summit Collective SAS,FR,France,Europe,Western Europe,manufacturing,500,Enterprise,outbound,2026-04-26,,active
+207,cus_000207,Silver Supply LLP,GB,United Kingdom,Europe,United Kingdom,construction,46,SMB,event,2022-12-13,,churned
+208,cus_000208,Canyon Labs Inc,US,United States,North America,West,facilities,46,SMB,inbound,2026-03-23,,active
+209,cus_000209,Nimbus Workshops Pty Ltd,AU,Australia,APAC,Australia,education,35,SMB,self_serve,2023-10-18,,churned
+210,cus_000210,Copper Retail LLC,US,United States,North America,Northeast,healthcare,10,SMB,self_serve,2026-07-03,2026-06-26,active
+211,cus_000211,Lumen Industries Inc,US,United States,North America,South,education,9,SMB,self_serve,2024-08-09,,active
+212,cus_000212,Pacific Workshops Ltd,CA,Canada,North America,Canada,financial_services,1168,Enterprise,inbound,2023-03-21,,active
+213,cus_000213,Prairie Workshops SAS,FR,France,Europe,Western Europe,healthcare,690,Enterprise,partner,2024-07-16,,active
+214,cus_000214,Forge Labs Ltd,GB,United Kingdom,Europe,United Kingdom,professional_services,55,Mid-Market,partner,2025-01-30,,active
+215,cus_000215,Atlas Group Inc,US,United States,North America,West,education,14,SMB,event,2023-10-13,,active
+216,cus_000216,Nimbus Engineering LLC,US,United States,North America,Northeast,construction,500,Enterprise,partner,2026-07-14,,active
+217,cus_000217,Pioneer Solutions GmbH,DE,Germany,Europe,DACH,manufacturing,28,SMB,partner,2026-06-23,,active
+218,cus_000218,Amber Logistics AG,DE,Germany,Europe,DACH,construction,13,SMB,self_serve,2024-09-08,,active
+219,cus_000219,Canyon Clinics SARL,FR,France,Europe,Western Europe,manufacturing,54,Mid-Market,partner,2024-12-25,,active
+220,cus_000220,Vertex Ventures Corp,US,United States,North America,Northeast,professional_services,37,SMB,outbound,2026-03-08,,active
+221,cus_000221,Forest Logistics GmbH,DE,Germany,Europe,DACH,healthcare,563,Enterprise,outbound,2025-10-29,,active
+222,cus_000222,Oak Ventures AG,DE,Germany,Europe,DACH,facilities,500,Enterprise,inbound,2023-12-15,,active
+223,cus_000223,Beacon Solutions LLC,US,United States,North America,South,retail,21,SMB,self_serve,2024-09-16,2024-09-09,active
+224,cus_000224,Blue Advisory SAS,FR,France,Europe,Western Europe,,77,Mid-Market,outbound,2024-10-24,,active
+225,cus_000225,Summit Partners LLC,US,United States,North America,Northeast,construction,81,Mid-Market,outbound,2025-10-07,,active
+226,cus_000226,River Studios Corp,US,United States,North America,Midwest,retail,45,SMB,self_serve,2025-07-12,2025-07-05,active
+227,cus_000227,Oak Labs SAS,FR,France,Europe,Western Europe,logistics,50,Mid-Market,outbound,2025-05-06,,active
+228,cus_000228,Coastal Advisory GmbH,DE,Germany,Europe,DACH,logistics,49,SMB,self_serve,2026-03-10,2026-02-24,active
+229,cus_000229,Cedar Retail Corp,US,United States,North America,South,construction,36,SMB,inbound,2024-02-11,,churned
+230,cus_000230,Maple Collective Pty Ltd,AU,Australia,APAC,Australia,professional_services,111,Mid-Market,outbound,2023-09-28,,churned
+231,cus_000231,Metro Works Corp,US,United States,North America,South,professional_services,44,SMB,self_serve,2023-11-14,,churned
+232,cus_000232,Vertex Properties LLP,GB,United Kingdom,Europe,United Kingdom,facilities,23,SMB,partner,2024-04-18,,active
+233,cus_000233,Amber Logistics B.V.,NL,Netherlands,Europe,Western Europe,logistics,32,SMB,inbound,2026-04-25,,active
+234,cus_000234,Iron Supply AB,SE,Sweden,Europe,Nordics,professional_services,7,SMB,event,2025-08-01,,active
+235,cus_000235,Canyon Ventures SARL,FR,France,Europe,Western Europe,manufacturing,114,Mid-Market,outbound,2025-08-30,,active
+236,cus_000236,Lumen Group Inc,CA,Canada,North America,Canada,manufacturing,74,Mid-Market,outbound,2024-05-15,,active
+237,cus_000237,Pioneer Properties Ltd,GB,United Kingdom,Europe,United Kingdom,construction,665,Enterprise,inbound,2023-07-08,,active
+238,cus_000238,Golden Clinics Ltd,CA,Canada,North America,Canada,,140,Mid-Market,inbound,2024-05-25,,active
+239,cus_000239,Silver Studios Inc,US,United States,North America,South,financial_services,889,Enterprise,partner,2026-02-17,,active
+240,cus_000240,Canyon Systems GmbH,DE,Germany,Europe,DACH,financial_services,153,Mid-Market,partner,2023-12-27,,churned
+241,cus_000241,Nimbus Collective Inc,US,United States,North America,Midwest,professional_services,78,Mid-Market,outbound,2023-05-18,,churned
+242,cus_000242,Oak Holdings LLP,GB,United Kingdom,Europe,United Kingdom,retail,23,SMB,inbound,2026-06-01,,active
+243,cus_000243,Oak Industries LLC,US,United States,North America,Northeast,healthcare,46,SMB,inbound,2026-05-08,,active
+244,cus_000244,Anchor Properties Inc,CA,Canada,North America,Canada,education,23,SMB,self_serve,2024-12-22,2024-12-08,active
+245,cus_000245,Apex Advisory LLP,GB,United Kingdom,Europe,United Kingdom,logistics,1393,Enterprise,outbound,2025-05-10,,active
+246,cus_000246,Atlas Group Ltd,CA,Canada,North America,Canada,professional_services,125,Mid-Market,inbound,2024-06-01,,active
+247,cus_000247,Forest Retail Ltd,CA,Canada,North America,Canada,facilities,95,Mid-Market,outbound,2026-06-24,,active
+248,cus_000248,Nimbus Studios SARL,FR,France,Europe,Western Europe,logistics,10,SMB,self_serve,2022-12-01,2022-11-17,churned
+249,cus_000249,Alpine Studios SAS,FR,France,Europe,Western Europe,facilities,35,SMB,self_serve,2022-08-02,2022-07-19,active
+250,cus_000250,Beacon Engineering SAS,FR,France,Europe,Western Europe,professional_services,28,SMB,self_serve,2026-06-01,2026-05-18,active
+251,cus_000251,Apex Works Ltd,GB,United Kingdom,Europe,United Kingdom,professional_services,98,Mid-Market,inbound,2025-04-30,,active
+252,cus_000252,Atlas Clinics Ltd,GB,United Kingdom,Europe,United Kingdom,financial_services,30,SMB,inbound,2026-04-30,,active
+253,cus_000253,Golden Partners Corp,US,United States,North America,West,healthcare,71,Mid-Market,outbound,2025-09-06,,active
+254,cus_000254,Iron Studios Inc,US,United States,North America,West,professional_services,47,SMB,self_serve,2026-02-19,,churned
+255,cus_000255,Alpine Properties LLC,US,United States,North America,South,logistics,43,SMB,self_serve,2024-03-10,2024-02-25,churned
+256,cus_000256,Blue Operations Corp,US,United States,North America,Midwest,manufacturing,13,SMB,self_serve,2023-05-28,2023-05-14,active
+257,cus_000257,Forge Logistics Inc,US,United States,North America,Northeast,professional_services,73,Mid-Market,inbound,2025-02-07,,active
+258,cus_000258,Lumen Collective Inc,US,United States,North America,South,logistics,27,SMB,event,2025-08-20,,active
+259,cus_000259,Pioneer Studios Pty Ltd,AU,Australia,APAC,Australia,financial_services,165,Mid-Market,outbound,2025-01-13,,active
+260,cus_000260,Forge Studios LLC,US,United States,North America,West,logistics,48,SMB,inbound,2026-02-26,,active
+261,cus_000261,Coastal Fabrication LLC,US,United States,North America,Northeast,logistics,6,SMB,outbound,2024-07-10,,active
+262,cus_000262,Forest Systems AG,DE,Germany,Europe,DACH,healthcare,30,SMB,inbound,2026-04-03,,active
+263,cus_000263,Iron Ventures Pty Ltd,AU,Australia,APAC,Australia,construction,8,SMB,self_serve,2025-08-16,,churned
+264,cus_000264,River Partners LLC,US,United States,North America,West,facilities,107,Mid-Market,partner,2022-10-06,,active
+265,cus_000265,Copper Engineering Pty Ltd,AU,Australia,APAC,Australia,healthcare,44,SMB,inbound,2026-06-27,,active
+266,cus_000266,Maple Studios Corp,US,United States,North America,South,education,74,Mid-Market,outbound,2024-12-13,,churned
+267,cus_000267,Silver Partners SAS,FR,France,Europe,Western Europe,financial_services,65,Mid-Market,outbound,2025-01-28,,churned
+268,cus_000268,Lumen Engineering Inc,US,United States,North America,South,professional_services,38,SMB,inbound,2023-06-26,,churned
+269,cus_000269,Canyon Systems Ltd,CA,Canada,North America,Canada,manufacturing,36,SMB,partner,2025-02-14,,active
+270,cus_000270,Prairie Labs LLP,GB,United Kingdom,Europe,United Kingdom,healthcare,178,Mid-Market,self_serve,2024-10-26,2024-10-12,active
+271,cus_000271,Nimbus Properties GmbH,DE,Germany,Europe,DACH,professional_services,67,Mid-Market,outbound,2023-08-25,,active
+272,cus_000272,North Operations LLP,GB,United Kingdom,Europe,United Kingdom,professional_services,2340,Enterprise,partner,2025-02-25,,churned
+273,cus_000273,Nimbus Group LLC,US,United States,North America,West,facilities,50,Mid-Market,inbound,2026-04-13,,active
+274,cus_000274,Bright Supply Pty Ltd,AU,Australia,APAC,Australia,manufacturing,50,Mid-Market,inbound,2025-04-20,,active
+275,cus_000275,Maple Supply GmbH,DE,Germany,Europe,DACH,professional_services,17,SMB,self_serve,2026-06-04,2026-05-21,active
+276,cus_000276,Anchor Works B.V.,NL,Netherlands,Europe,Western Europe,retail,7,SMB,self_serve,2026-03-07,,active
+277,cus_000277,Copper Studios Ltd,GB,United Kingdom,Europe,United Kingdom,healthcare,50,Mid-Market,self_serve,2026-08-01,2026-07-18,active
+278,cus_000278,Harbour Collective Inc,US,United States,North America,West,healthcare,1169,Enterprise,event,2025-11-24,,active
+279,cus_000279,Coastal Advisory LLP,GB,United Kingdom,Europe,United Kingdom,healthcare,28,SMB,self_serve,2024-02-14,2024-01-31,churned
+280,cus_000280,Forest Services LLC,US,United States,North America,South,,40,SMB,self_serve,2024-11-13,2024-10-30,churned
+281,cus_000281,Oak Services Corp,US,United States,North America,Northeast,retail,32,SMB,self_serve,2024-06-25,2024-06-11,active
+282,cus_000282,Anchor Workshops B.V.,NL,Netherlands,Europe,Western Europe,logistics,42,SMB,inbound,2026-07-30,,active
+283,cus_000283,Apex Workshops LLP,GB,United Kingdom,Europe,United Kingdom,logistics,37,SMB,self_serve,2024-01-13,,churned
+284,cus_000284,Forest Workshops Inc,US,United States,North America,West,professional_services,39,SMB,partner,2022-10-04,,churned
+285,cus_000285,Coastal Logistics LLP,GB,United Kingdom,Europe,United Kingdom,facilities,181,Mid-Market,inbound,2025-05-01,,active
+286,cus_000286,Atlas Collective LLP,GB,United Kingdom,Europe,United Kingdom,retail,36,SMB,self_serve,2025-10-28,2025-10-14,active
+287,cus_000287,Metro Workshops Ltd,GB,United Kingdom,Europe,United Kingdom,facilities,17,SMB,partner,2026-05-24,,churned
+288,cus_000288,Prairie Holdings Inc,US,United States,North America,South,retail,123,Mid-Market,inbound,2025-05-26,,active
+289,cus_000289,Granite Advisory Pty Ltd,AU,Australia,APAC,Australia,professional_services,17,SMB,self_serve,2024-11-16,2024-11-02,churned
+290,cus_000290,Maple Engineering Inc,US,United States,North America,South,facilities,31,SMB,self_serve,2025-05-03,2025-04-12,active
+291,cus_000291,Urban Ventures Corp,US,United States,North America,South,education,61,Mid-Market,partner,2025-09-25,,active
+292,cus_000292,Pioneer Clinics Corp,US,United States,North America,West,manufacturing,111,Mid-Market,partner,2023-12-04,,churned
+293,cus_000293,Copper Networks Inc,US,United States,North America,South,facilities,78,Mid-Market,partner,2024-09-09,,active
+294,cus_000294,Maple Solutions LLP,GB,United Kingdom,Europe,United Kingdom,manufacturing,34,SMB,partner,2023-07-04,,churned
+295,cus_000295,Silver Advisory AG,DE,Germany,Europe,DACH,professional_services,43,SMB,self_serve,2025-05-09,2025-04-18,active
+296,cus_000296,Coastal Workshops SAS,FR,France,Europe,Western Europe,financial_services,27,SMB,partner,2024-10-12,,active
+297,cus_000297,Copper Group B.V.,NL,Netherlands,Europe,Western Europe,logistics,54,Mid-Market,partner,2026-07-07,,active
+298,cus_000298,Canyon Retail Inc,CA,Canada,North America,Canada,construction,97,Mid-Market,partner,2023-09-18,,active
+299,cus_000299,Bright Logistics Pty Ltd,AU,Australia,APAC,Australia,facilities,138,Mid-Market,event,2025-01-06,,active
+300,cus_000300,Nimbus Group AB,SE,Sweden,Europe,Nordics,professional_services,114,Mid-Market,outbound,2024-07-09,,active
+301,cus_000301,Metro Holdings Pty Ltd,AU,Australia,APAC,Australia,construction,5385,Enterprise,outbound,2023-07-03,,active
+302,cus_000302,Pioneer Studios Corp,US,United States,North America,Midwest,construction,46,SMB,self_serve,2025-03-20,,churned
+303,cus_000303,Oak Works LLP,GB,United Kingdom,Europe,United Kingdom,manufacturing,45,SMB,self_serve,2022-10-26,,active
+304,cus_000304,Apex Group B.V.,NL,Netherlands,Europe,Western Europe,facilities,166,Mid-Market,inbound,2022-10-02,,active
+305,cus_000305,Prairie Partners LLC,US,United States,North America,West,professional_services,19,SMB,inbound,2024-09-06,,churned
+306,cus_000306,Harbour Logistics Corp,US,United States,North America,Northeast,construction,95,Mid-Market,inbound,2026-07-17,,active
+307,cus_000307,Maple Fabrication Inc,CA,Canada,North America,Canada,financial_services,30,SMB,self_serve,2026-06-10,2026-05-20,active
+308,cus_000308,Prairie Clinics Inc,US,United States,North America,South,education,13,SMB,inbound,2025-04-27,,active
+309,cus_000309,Nimbus Logistics Pty Ltd,AU,Australia,APAC,Australia,manufacturing,69,Mid-Market,outbound,2026-01-27,,active
+310,cus_000310,Canyon Operations B.V.,NL,Netherlands,Europe,Western Europe,facilities,209,Mid-Market,event,2025-07-19,,active
+311,cus_000311,Bright Works Corp,US,United States,North America,Northeast,logistics,47,SMB,self_serve,2025-08-09,2025-07-26,active
+312,cus_000312,Granite Collective Corp,US,United States,North America,West,professional_services,166,Mid-Market,outbound,2026-03-02,,active
+313,cus_000313,Alpine Systems LLP,GB,United Kingdom,Europe,United Kingdom,facilities,91,Mid-Market,self_serve,2023-04-07,2023-03-24,active
+314,cus_000314,Silver Collective SAS,FR,France,Europe,Western Europe,manufacturing,103,Mid-Market,partner,2025-07-06,,active
+315,cus_000315,Vertex Systems Corp,US,United States,North America,South,professional_services,100,Mid-Market,self_serve,2023-11-16,2023-10-26,churned
+316,cus_000316,Apex Workshops Corp,US,United States,North America,South,facilities,14,SMB,inbound,2023-01-08,,churned
+317,cus_000317,Beacon Workshops Inc,CA,Canada,North America,Canada,retail,13,SMB,event,2024-10-13,,churned
+318,cus_000318,Harbour Fabrication Inc,US,United States,North America,Midwest,education,40,SMB,self_serve,2024-07-20,2024-06-29,churned
+319,cus_000319,Oak Properties SARL,FR,France,Europe,Western Europe,manufacturing,33,SMB,self_serve,2024-11-29,2024-11-15,churned
+320,cus_000320,Alpine Systems LLC,US,United States,North America,South,construction,31,SMB,inbound,2024-07-16,,active
+321,cus_000321,Apex Logistics Corp,US,United States,North America,West,construction,261,Mid-Market,event,2024-11-07,,active
+322,cus_000322,Copper Properties Corp,US,United States,North America,West,healthcare,63,Mid-Market,inbound,2023-10-21,,active
+323,cus_000323,Granite Retail B.V.,NL,Netherlands,Europe,Western Europe,professional_services,87,Mid-Market,outbound,2025-11-13,,active
+324,cus_000324,Forge Operations Ltd,GB,United Kingdom,Europe,United Kingdom,professional_services,619,Enterprise,outbound,2026-01-02,,active
+325,cus_000325,Coastal Studios Inc,US,United States,North America,South,healthcare,82,Mid-Market,self_serve,2025-12-14,2025-11-30,active
+326,cus_000326,Prairie Retail GmbH,DE,Germany,Europe,DACH,,86,Mid-Market,outbound,2025-07-01,,active
+327,cus_000327,Anchor Ventures LLP,GB,United Kingdom,Europe,United Kingdom,financial_services,84,Mid-Market,inbound,2026-02-22,,churned
+328,cus_000328,Lumen Advisory AB,SE,Sweden,Europe,Nordics,professional_services,15,SMB,self_serve,2023-01-10,2022-12-20,churned
+329,cus_000329,Alpine Studios LLP,GB,United Kingdom,Europe,United Kingdom,construction,50,Mid-Market,outbound,2024-11-20,,churned
+330,cus_000330,Nimbus Properties Inc,US,United States,North America,South,financial_services,9,SMB,self_serve,2024-01-01,2023-12-18,active
+331,cus_000331,Golden Partners Inc,CA,Canada,North America,Canada,healthcare,895,Enterprise,partner,2026-05-25,,active
+332,cus_000332,Lumen Fabrication Pty Ltd,AU,Australia,APAC,Australia,logistics,174,Mid-Market,event,2026-03-11,,active
+333,cus_000333,Bright Services Ltd,GB,United Kingdom,Europe,United Kingdom,professional_services,81,Mid-Market,partner,2026-07-12,,active
+334,cus_000334,Vertex Works Inc,CA,Canada,North America,Canada,logistics,141,Mid-Market,event,2023-04-06,,active
+335,cus_000335,Beacon Properties LLC,US,United States,North America,West,facilities,36,SMB,outbound,2025-08-01,,churned
+336,cus_000336,Beacon Studios LLC,US,United States,North America,South,facilities,32,SMB,inbound,2026-08-20,,active
+337,cus_000337,Granite Industries Pty Ltd,AU,Australia,APAC,Australia,manufacturing,170,Mid-Market,inbound,2025-11-13,,active
+338,cus_000338,Beacon Engineering Corp,US,United States,North America,West,manufacturing,1290,Enterprise,outbound,2024-02-14,,churned
+339,cus_000339,Maple Workshops Pty Ltd,AU,Australia,APAC,Australia,manufacturing,10,SMB,self_serve,2025-06-28,2025-06-07,active
+340,cus_000340,Metro Clinics Pty Ltd,AU,Australia,APAC,Australia,retail,18,SMB,self_serve,2024-02-29,,churned
+341,cus_000341,Forge Engineering Pty Ltd,AU,Australia,APAC,Australia,facilities,213,Mid-Market,inbound,2025-01-11,,churned
+342,cus_000342,Cedar Workshops Inc,CA,Canada,North America,Canada,professional_services,643,Enterprise,self_serve,2025-06-05,2025-05-22,active
+343,cus_000343,Atlas Workshops Corp,US,United States,North America,South,healthcare,1256,Enterprise,inbound,2026-01-03,,active
+344,cus_000344,River Labs Ltd,GB,United Kingdom,Europe,United Kingdom,retail,10,SMB,event,2023-04-02,,active
+345,cus_000345,North Properties Pty Ltd,AU,Australia,APAC,Australia,facilities,2277,Enterprise,outbound,2025-01-21,,active
+346,cus_000346,North Clinics LLC,US,United States,North America,South,professional_services,500,Enterprise,partner,2023-09-10,,active
+347,cus_000347,Anchor Supply LLC,US,United States,North America,West,logistics,34,SMB,self_serve,2025-03-05,2025-02-19,churned
+348,cus_000348,Coastal Holdings Ltd,CA,Canada,North America,Canada,professional_services,25,SMB,inbound,2024-07-15,,active
+349,cus_000349,Iron Works Ltd,GB,United Kingdom,Europe,United Kingdom,construction,107,Mid-Market,outbound,2026-07-18,,active
+350,cus_000350,Bright Systems AB,SE,Sweden,Europe,Nordics,professional_services,254,Mid-Market,inbound,2025-12-05,,active
+351,cus_000351,Prairie Logistics Inc,US,United States,North America,Northeast,healthcare,11,SMB,self_serve,2025-05-20,,active
+352,cus_000352,Urban Engineering AB,SE,Sweden,Europe,Nordics,construction,16,SMB,outbound,2023-09-05,,churned
+353,cus_000353,Canyon Supply Pty Ltd,AU,Australia,APAC,Australia,education,66,Mid-Market,event,2025-11-17,,active
+354,cus_000354,Bright Industries LLC,US,United States,North America,South,healthcare,33,SMB,partner,2026-06-08,,active
+355,cus_000355,Harbour Supply SARL,FR,France,Europe,Western Europe,education,26,SMB,partner,2026-01-30,,churned
+356,cus_000356,Amber Services Corp,US,United States,North America,Midwest,,156,Mid-Market,inbound,2024-03-12,,active
+357,cus_000357,Nimbus Holdings Corp,US,United States,North America,South,manufacturing,60,Mid-Market,outbound,2025-06-16,,active
+358,cus_000358,Alpine Group Corp,US,United States,North America,West,construction,43,SMB,self_serve,2022-12-17,2022-12-03,churned
+359,cus_000359,Lumen Solutions Corp,US,United States,North America,West,financial_services,50,Mid-Market,inbound,2022-07-26,,active
+360,cus_000360,Pioneer Partners B.V.,NL,Netherlands,Europe,Western Europe,manufacturing,48,SMB,event,2024-12-29,,active
+361,cus_000361,Urban Logistics B.V.,NL,Netherlands,Europe,Western Europe,professional_services,25,SMB,self_serve,2026-05-17,2026-05-03,active
+362,cus_000362,Golden Supply AB,SE,Sweden,Europe,Nordics,professional_services,6,SMB,self_serve,2024-07-03,,churned
+363,cus_000363,Anchor Industries LLC,US,United States,North America,Northeast,construction,37,SMB,inbound,2026-06-30,,active
+364,cus_000364,River Advisory Corp,US,United States,North America,West,manufacturing,279,Mid-Market,partner,2025-02-13,,active
+365,cus_000365,Canyon Advisory Inc,US,United States,North America,West,professional_services,34,SMB,self_serve,2025-10-13,2025-09-29,churned
+366,cus_000366,North Partners AB,SE,Sweden,Europe,Nordics,retail,91,Mid-Market,partner,2024-09-10,,active
+367,cus_000367,River Services LLP,GB,United Kingdom,Europe,United Kingdom,construction,28,SMB,partner,2023-07-05,,churned
+368,cus_000368,Golden Industries SARL,FR,France,Europe,Western Europe,facilities,74,Mid-Market,inbound,2024-01-31,,active
+369,cus_000369,Golden Supply Pty Ltd,AU,Australia,APAC,Australia,professional_services,92,Mid-Market,self_serve,2023-06-01,2023-05-18,active
+370,cus_000370,Oak Logistics LLC,US,United States,North America,West,professional_services,32,SMB,event,2025-04-20,,churned
+371,cus_000371,Granite Operations LLC,US,United States,North America,Northeast,retail,85,Mid-Market,event,2024-10-29,,active
+372,cus_000372,Vertex Group LLC,US,United States,North America,South,,548,Enterprise,self_serve,2026-07-20,2026-06-29,active
+373,cus_000373,Summit Holdings LLC,US,United States,North America,Northeast,education,44,SMB,self_serve,2025-07-04,2025-06-20,churned
+374,cus_000374,River Fabrication LLP,GB,United Kingdom,Europe,United Kingdom,healthcare,107,Mid-Market,inbound,2025-12-24,,active
+375,cus_000375,Urban Operations Corp,US,United States,North America,West,professional_services,30,SMB,self_serve,2024-11-24,2024-11-10,churned
+376,cus_000376,Atlas Holdings Pty Ltd,AU,Australia,APAC,Australia,professional_services,23,SMB,self_serve,2025-02-11,2025-01-28,churned
+377,cus_000377,Granite Properties AB,SE,Sweden,Europe,Nordics,healthcare,50,Mid-Market,outbound,2022-09-29,,active
+378,cus_000378,Iron Supply LLC,US,United States,North America,Midwest,financial_services,27,SMB,outbound,2026-07-16,,active
+379,cus_000379,Atlas Fabrication Corp,US,United States,North America,West,construction,780,Enterprise,partner,2024-06-11,,active
+380,cus_000380,Anchor Holdings SAS,FR,France,Europe,Western Europe,professional_services,35,SMB,self_serve,2026-07-26,,active
+381,cus_000381,Summit Holdings Corp,US,United States,North America,Midwest,manufacturing,36,SMB,self_serve,2025-07-13,,churned
+382,cus_000382,Silver Collective Ltd,CA,Canada,North America,Canada,manufacturing,53,Mid-Market,self_serve,2022-08-06,2022-07-23,active
+383,cus_000383,Forest Supply Inc,CA,Canada,North America,Canada,healthcare,83,Mid-Market,event,2026-04-07,,active
+384,cus_000384,Maple Industries AB,SE,Sweden,Europe,Nordics,logistics,101,Mid-Market,partner,2025-03-14,,active
+385,cus_000385,Atlas Group SARL,FR,France,Europe,Western Europe,manufacturing,20,SMB,event,2024-09-15,,active
+386,cus_000386,Harbour Advisory LLC,US,United States,North America,Northeast,logistics,50,Mid-Market,partner,2025-12-17,,active
+387,cus_000387,Oak Clinics B.V.,NL,Netherlands,Europe,Western Europe,facilities,54,Mid-Market,outbound,2025-10-13,,active
+388,cus_000388,North Works AB,SE,Sweden,Europe,Nordics,manufacturing,36,SMB,self_serve,2025-06-09,2025-06-02,active
+389,cus_000389,Granite Supply Corp,US,United States,North America,Northeast,construction,43,SMB,event,2024-01-24,,churned
+390,cus_000390,Alpine Workshops Pty Ltd,AU,Australia,APAC,Australia,healthcare,36,SMB,outbound,2024-10-14,,active
+391,cus_000391,Atlas Workshops Inc,US,United States,North America,West,financial_services,45,SMB,self_serve,2026-08-14,2026-08-07,active
+392,cus_000392,Maple Works Corp,US,United States,North America,Midwest,professional_services,718,Enterprise,outbound,2026-01-15,,active
+393,cus_000393,North Fabrication Pty Ltd,AU,Australia,APAC,Australia,retail,187,Mid-Market,outbound,2024-12-05,,churned
+394,cus_000394,North Logistics Pty Ltd,AU,Australia,APAC,Australia,professional_services,791,Enterprise,outbound,2024-06-06,,active
+395,cus_000395,Forge Studios AG,DE,Germany,Europe,DACH,financial_services,196,Mid-Market,outbound,2025-09-10,,active
+396,cus_000396,Metro Partners LLP,GB,United Kingdom,Europe,United Kingdom,facilities,6,SMB,self_serve,2025-02-05,2025-01-22,active
+397,cus_000397,Apex Collective GmbH,DE,Germany,Europe,DACH,professional_services,500,Enterprise,partner,2023-10-12,,churned
+398,cus_000398,Canyon Partners LLC,US,United States,North America,South,healthcare,31,SMB,inbound,2024-08-31,,active
+399,cus_000399,Forest Studios Inc,US,United States,North America,West,professional_services,14,SMB,event,2025-10-05,,churned
+400,cus_000400,Canyon Supply Inc,US,United States,North America,Northeast,manufacturing,977,Enterprise,outbound,2026-06-13,,active
+401,cus_000401,Pacific Partners Inc,US,United States,North America,Midwest,retail,37,SMB,inbound,2024-06-24,,active
+402,cus_000402,Pioneer Services Corp,US,United States,North America,Midwest,professional_services,95,Mid-Market,self_serve,2025-06-28,,active
+403,cus_000403,Bright Networks LLP,GB,United Kingdom,Europe,United Kingdom,logistics,500,Enterprise,outbound,2026-03-02,,active
+404,cus_000404,Lumen Retail LLC,US,United States,North America,Northeast,manufacturing,141,Mid-Market,inbound,2025-06-26,,churned
+405,cus_000405,Nimbus Group AG,DE,Germany,Europe,DACH,construction,36,SMB,self_serve,2023-10-21,,churned
+406,cus_000406,North Clinics GmbH,DE,Germany,Europe,DACH,construction,21,SMB,self_serve,2023-06-08,2023-06-01,churned
+407,cus_000407,North Partners Ltd,GB,United Kingdom,Europe,United Kingdom,logistics,166,Mid-Market,inbound,2022-12-07,,active
+408,cus_000408,Urban Clinics Pty Ltd,AU,Australia,APAC,Australia,manufacturing,16,SMB,self_serve,2025-10-24,2025-10-03,churned
+409,cus_000409,Pacific Studios SAS,FR,France,Europe,Western Europe,education,66,Mid-Market,self_serve,2024-09-15,2024-09-01,active
+410,cus_000410,Silver Engineering Corp,US,United States,North America,West,facilities,74,Mid-Market,outbound,2025-08-26,,active
+411,cus_000411,Silver Partners Inc,US,United States,North America,West,manufacturing,193,Mid-Market,outbound,2026-03-14,,active
+412,cus_000412,Iron Industries Inc,US,United States,North America,Midwest,facilities,38,SMB,self_serve,2023-05-08,,active
+413,cus_000413,Pacific Solutions LLP,GB,United Kingdom,Europe,United Kingdom,education,70,Mid-Market,inbound,2025-02-24,,churned
+414,cus_000414,Forge Group Corp,US,United States,North America,Northeast,facilities,23,SMB,inbound,2024-11-13,,active
+415,cus_000415,Forest Ventures Ltd,CA,Canada,North America,Canada,construction,11,SMB,inbound,2026-07-28,,active
+416,cus_000416,Silver Works Corp,US,United States,North America,West,retail,176,Mid-Market,inbound,2025-11-29,,active
+417,cus_000417,Oak Studios B.V.,NL,Netherlands,Europe,Western Europe,logistics,6,SMB,inbound,2025-09-22,,active
+418,cus_000418,Metro Works B.V.,NL,Netherlands,Europe,Western Europe,manufacturing,138,Mid-Market,inbound,2023-08-02,,churned
+419,cus_000419,Golden Studios AG,DE,Germany,Europe,DACH,construction,18,SMB,self_serve,2026-08-10,2026-08-03,active
+420,cus_000420,Urban Logistics Inc,CA,Canada,North America,Canada,logistics,17,SMB,inbound,2024-11-04,,churned
+421,cus_000421,Apex Studios Inc,CA,Canada,North America,Canada,facilities,500,Enterprise,inbound,2023-07-20,,active
+422,cus_000422,Forest Holdings SARL,FR,France,Europe,Western Europe,manufacturing,40,SMB,self_serve,2024-07-23,,active
+423,cus_000423,North Holdings AB,SE,Sweden,Europe,Nordics,education,53,Mid-Market,partner,2025-12-18,,active
+424,cus_000424,Prairie Operations Corp,US,United States,North America,Midwest,manufacturing,627,Enterprise,outbound,2023-09-28,,active
+425,cus_000425,Metro Works Ltd,CA,Canada,North America,Canada,professional_services,50,Mid-Market,inbound,2026-08-28,,active
+426,cus_000426,Bright Advisory AG,DE,Germany,Europe,DACH,professional_services,49,SMB,inbound,2024-09-27,,active
+427,cus_000427,Nimbus Collective Pty Ltd,AU,Australia,APAC,Australia,facilities,11,SMB,self_serve,2024-09-12,2024-08-29,active
+428,cus_000428,Prairie Properties Pty Ltd,AU,Australia,APAC,Australia,healthcare,29,SMB,self_serve,2025-04-16,,active
+429,cus_000429,Apex Partners Inc,US,United States,North America,Northeast,manufacturing,24,SMB,partner,2026-06-30,,active
+430,cus_000430,Summit Collective AG,DE,Germany,Europe,DACH,financial_services,86,Mid-Market,inbound,2026-01-24,,active
+431,cus_000431,Pacific Supply LLC,US,United States,North America,Midwest,construction,71,Mid-Market,outbound,2025-09-13,,churned
+432,cus_000432,Metro Solutions Inc,CA,Canada,North America,Canada,logistics,83,Mid-Market,outbound,2023-12-21,,churned
+433,cus_000433,Vertex Networks Ltd,GB,United Kingdom,Europe,United Kingdom,professional_services,15,SMB,event,2024-11-01,,active
+434,cus_000434,Anchor Engineering LLC,US,United States,North America,South,logistics,1606,Enterprise,partner,2023-06-14,,active
+435,cus_000435,Cedar Supply LLC,US,United States,North America,South,healthcare,26,SMB,event,2025-06-04,,active
+436,cus_000436,Pioneer Supply AB,SE,Sweden,Europe,Nordics,facilities,30,SMB,self_serve,2025-09-15,2025-09-01,active
+437,cus_000437,Prairie Logistics AB,SE,Sweden,Europe,Nordics,manufacturing,30,SMB,self_serve,2023-10-30,2023-10-16,churned
+438,cus_000438,Amber Ventures LLP,GB,United Kingdom,Europe,United Kingdom,healthcare,106,Mid-Market,outbound,2022-07-17,,active
+439,cus_000439,Coastal Fabrication LLP,GB,United Kingdom,Europe,United Kingdom,professional_services,10,SMB,self_serve,2026-02-21,,active
+440,cus_000440,Urban Systems Inc,US,United States,North America,West,financial_services,133,Mid-Market,inbound,2024-10-03,,active
+441,cus_000441,Forest Group LLC,US,United States,North America,Northeast,logistics,132,Mid-Market,outbound,2024-11-19,,churned
+442,cus_000442,Bright Services Pty Ltd,AU,Australia,APAC,Australia,retail,166,Mid-Market,self_serve,2025-02-14,2025-01-31,active
+443,cus_000443,Anchor Holdings Inc,CA,Canada,North America,Canada,professional_services,158,Mid-Market,outbound,2026-02-07,,active
+444,cus_000444,Iron Solutions Corp,US,United States,North America,Midwest,professional_services,27,SMB,self_serve,2025-08-12,2025-08-05,active
+445,cus_000445,Nimbus Industries Inc,US,United States,North America,Midwest,retail,130,Mid-Market,inbound,2026-06-26,,active
+446,cus_000446,Atlas Solutions LLP,GB,United Kingdom,Europe,United Kingdom,healthcare,126,Mid-Market,inbound,2025-07-31,,churned
+447,cus_000447,Atlas Ventures Pty Ltd,AU,Australia,APAC,Australia,retail,17,SMB,self_serve,2024-05-15,,active
+448,cus_000448,Urban Partners SAS,FR,France,Europe,Western Europe,manufacturing,94,Mid-Market,partner,2026-02-08,,active
+449,cus_000449,Blue Holdings Pty Ltd,AU,Australia,APAC,Australia,professional_services,83,Mid-Market,outbound,2022-12-21,,churned
+450,cus_000450,Golden Operations Ltd,GB,United Kingdom,Europe,United Kingdom,facilities,235,Mid-Market,outbound,2025-04-13,,active
+451,cus_000451,Vertex Group Inc,US,United States,North America,West,education,71,Mid-Market,outbound,2026-07-24,,active
+452,cus_000452,River Logistics B.V.,NL,Netherlands,Europe,Western Europe,education,66,Mid-Market,inbound,2025-09-24,,active
+453,cus_000453,Granite Logistics B.V.,NL,Netherlands,Europe,Western Europe,manufacturing,32,SMB,inbound,2026-08-25,,active
+454,cus_000454,Pioneer Holdings Pty Ltd,AU,Australia,APAC,Australia,construction,25,SMB,self_serve,2024-05-29,2024-05-15,churned
+455,cus_000455,North Studios AG,DE,Germany,Europe,DACH,healthcare,15,SMB,self_serve,2026-07-24,,active
+456,cus_000456,Lumen Ventures Pty Ltd,AU,Australia,APAC,Australia,manufacturing,32,SMB,inbound,2024-03-11,,churned
+457,cus_000457,Amber Partners B.V.,NL,Netherlands,Europe,Western Europe,professional_services,285,Mid-Market,partner,2026-04-21,,active
+458,cus_000458,Apex Advisory LLC,US,United States,North America,Northeast,retail,18,SMB,self_serve,2024-05-22,2024-05-01,active
+459,cus_000459,Canyon Properties AG,DE,Germany,Europe,DACH,logistics,958,Enterprise,inbound,2024-12-25,,active
+460,cus_000460,Anchor Systems AB,SE,Sweden,Europe,Nordics,manufacturing,150,Mid-Market,self_serve,2025-04-07,,active
+461,cus_000461,Nimbus Engineering LLP,GB,United Kingdom,Europe,United Kingdom,manufacturing,105,Mid-Market,inbound,2025-12-25,,active
+462,cus_000462,Silver Services Corp,US,United States,North America,Northeast,healthcare,152,Mid-Market,event,2022-09-08,,active
+463,cus_000463,Apex Networks SARL,FR,France,Europe,Western Europe,logistics,499,Mid-Market,event,2025-09-30,,active
+464,cus_000464,Cedar Fabrication Inc,US,United States,North America,South,facilities,39,SMB,inbound,2024-03-10,,churned
+465,cus_000465,River Systems Corp,US,United States,North America,South,construction,32,SMB,self_serve,2025-08-27,,active
+466,cus_000466,Alpine Logistics Corp,US,United States,North America,Northeast,construction,54,Mid-Market,event,2024-09-15,,churned
+467,cus_000467,Pioneer Systems LLC,US,United States,North America,South,healthcare,12,SMB,self_serve,2025-06-13,2025-05-30,active
+468,cus_000468,Atlas Labs Inc,US,United States,North America,South,professional_services,9,SMB,event,2022-07-26,,active
+469,cus_000469,Forest Operations Pty Ltd,AU,Australia,APAC,Australia,professional_services,60,Mid-Market,inbound,2026-04-30,,active
+470,cus_000470,Apex Holdings Corp,US,United States,North America,South,construction,22,SMB,self_serve,2025-08-11,2025-07-21,active
+471,cus_000471,Harbour Workshops Pty Ltd,AU,Australia,APAC,Australia,facilities,152,Mid-Market,self_serve,2023-07-10,2023-06-19,active
+472,cus_000472,River Supply Pty Ltd,AU,Australia,APAC,Australia,financial_services,149,Mid-Market,self_serve,2024-01-05,,active
+473,cus_000473,Apex Studios Ltd,CA,Canada,North America,Canada,professional_services,789,Enterprise,outbound,2025-10-15,,active
+474,cus_000474,Nimbus Supply LLC,US,United States,North America,West,professional_services,163,Mid-Market,inbound,2025-12-03,,active
+475,cus_000475,Maple Group LLP,GB,United Kingdom,Europe,United Kingdom,healthcare,49,SMB,self_serve,2026-03-24,2026-03-03,active
+476,cus_000476,Apex Fabrication LLP,GB,United Kingdom,Europe,United Kingdom,financial_services,27,SMB,inbound,2025-04-03,,active
+477,cus_000477,Summit Labs LLC,US,United States,North America,Midwest,education,19,SMB,inbound,2025-10-14,,active
+478,cus_000478,Granite Labs GmbH,DE,Germany,Europe,DACH,professional_services,45,SMB,partner,2026-01-15,,active
+479,cus_000479,North Systems Corp,US,United States,North America,West,logistics,40,SMB,self_serve,2023-12-02,2023-11-18,churned
+480,cus_000480,North Studios Corp,US,United States,North America,South,retail,880,Enterprise,inbound,2025-09-29,,active
+481,cus_000481,Golden Workshops Inc,CA,Canada,North America,Canada,construction,62,Mid-Market,self_serve,2024-11-04,2024-11-04,trial_expired
+482,cus_000482,Summit Operations Inc,US,United States,North America,West,manufacturing,20,SMB,self_serve,2025-08-04,2025-08-04,trial_expired
+483,cus_000483,Copper Industries LLC,US,United States,North America,Northeast,logistics,68,Mid-Market,self_serve,2023-02-16,2023-02-16,trial_expired
+484,cus_000484,Forest Engineering Corp,US,United States,North America,West,logistics,72,Mid-Market,self_serve,2022-08-28,2022-08-28,trial_expired
+485,cus_000485,Alpine Studios Corp,US,United States,North America,South,healthcare,64,Mid-Market,self_serve,2023-03-24,2023-03-24,trial_expired
+486,cus_000486,Forest Advisory AB,SE,Sweden,Europe,Nordics,construction,22,SMB,self_serve,2023-04-19,2023-04-19,trial_expired
+487,cus_000487,Bright Supply B.V.,NL,Netherlands,Europe,Western Europe,healthcare,71,Mid-Market,self_serve,2023-08-28,2023-08-28,trial_expired
+488,cus_000488,Coastal Labs Ltd,CA,Canada,North America,Canada,logistics,26,SMB,self_serve,2024-03-07,2024-03-07,trial_expired
+489,cus_000489,Vertex Workshops LLC,US,United States,North America,South,professional_services,57,Mid-Market,self_serve,2026-04-21,2026-04-21,trial_expired
+490,cus_000490,Nimbus Engineering Inc,US,United States,North America,South,retail,20,SMB,self_serve,2025-04-05,2025-04-05,trial_expired
+491,cus_000491,Bright Engineering Corp,US,United States,North America,South,healthcare,28,SMB,self_serve,2025-05-31,2025-05-31,trial_expired
+492,cus_000492,Forge Advisory Inc,US,United States,North America,Midwest,facilities,25,SMB,self_serve,2025-01-31,2025-01-31,trial_expired
+493,cus_000493,Anchor Clinics Pty Ltd,AU,Australia,APAC,Australia,logistics,43,SMB,self_serve,2026-05-20,2026-05-20,trial_expired
+494,cus_000494,Bright Networks Inc,CA,Canada,North America,Canada,retail,61,Mid-Market,self_serve,2025-07-06,2025-07-06,trial_expired
+495,cus_000495,North Workshops GmbH,DE,Germany,Europe,DACH,construction,66,Mid-Market,self_serve,2025-08-01,2025-08-01,trial_expired
+496,cus_000496,Atlas Studios Inc,US,United States,North America,West,professional_services,27,SMB,self_serve,2025-06-07,2025-06-07,trial_expired
+497,cus_000497,Oak Collective Inc,US,United States,North America,South,logistics,25,SMB,self_serve,2026-02-27,2026-02-27,trial_expired
+498,cus_000498,Blue Networks Corp,US,United States,North America,West,healthcare,16,SMB,self_serve,2026-04-28,2026-04-28,trial_expired
+499,cus_000499,Vertex Works Pty Ltd,AU,Australia,APAC,Australia,healthcare,28,SMB,self_serve,2023-09-22,2023-09-22,trial_expired
+500,cus_000500,Oak Studios Inc,US,United States,North America,South,facilities,36,SMB,self_serve,2025-02-07,2025-02-07,trial_expired
+501,cus_000501,Amber Ventures AG,DE,Germany,Europe,DACH,,38,SMB,self_serve,2025-12-12,2025-12-12,trial_expired
+502,cus_000502,Blue Collective AG,DE,Germany,Europe,DACH,facilities,39,SMB,self_serve,2025-06-22,2025-06-22,trial_expired
+503,cus_000503,Granite Studios LLP,GB,United Kingdom,Europe,United Kingdom,retail,12,SMB,self_serve,2024-01-09,2024-01-09,trial_expired
+504,cus_000504,Maple Logistics Inc,CA,Canada,North America,Canada,manufacturing,76,Mid-Market,self_serve,2026-08-02,2026-08-02,trial_expired
+505,cus_000505,Forge Ventures Pty Ltd,AU,Australia,APAC,Australia,construction,80,Mid-Market,self_serve,2024-12-12,2024-12-12,trial_expired
+506,cus_000506,Cedar Collective Pty Ltd,AU,Australia,APAC,Australia,construction,69,Mid-Market,self_serve,2024-01-11,2024-01-11,trial_expired
+507,cus_000507,Apex Works LLC,US,United States,North America,Northeast,professional_services,64,Mid-Market,self_serve,2025-12-02,2025-12-02,trial_expired
+508,cus_000508,Golden Networks LLC,US,United States,North America,Northeast,healthcare,25,SMB,self_serve,2025-11-29,2025-11-29,trial_expired
+509,cus_000509,Iron Systems LLC,US,United States,North America,West,construction,37,SMB,self_serve,2023-07-15,2023-07-15,trial_expired
+510,cus_000510,Beacon Group LLC,US,United States,North America,Midwest,professional_services,43,SMB,self_serve,2024-06-11,2024-06-11,trial_expired
+511,cus_000511,Atlas Engineering B.V.,NL,Netherlands,Europe,Western Europe,facilities,68,Mid-Market,self_serve,2024-03-20,2024-03-20,trial_expired
+512,cus_000512,Pioneer Group B.V.,NL,Netherlands,Europe,Western Europe,construction,79,Mid-Market,self_serve,2022-12-01,2022-12-01,trial_expired
+513,cus_000513,Urban Properties Ltd,GB,United Kingdom,Europe,United Kingdom,,46,SMB,self_serve,2024-05-29,2024-05-29,trial_expired
+514,cus_000514,Metro Labs Ltd,GB,United Kingdom,Europe,United Kingdom,retail,30,SMB,self_serve,2025-12-08,2025-12-08,trial_expired
+515,cus_000515,Summit Clinics LLC,US,United States,North America,Northeast,facilities,76,Mid-Market,self_serve,2026-06-19,2026-06-19,trial_expired
+516,cus_000516,Amber Advisory GmbH,DE,Germany,Europe,DACH,retail,67,Mid-Market,self_serve,2023-07-06,2023-07-06,trial_expired
+517,cus_000517,Bright Labs AG,DE,Germany,Europe,DACH,retail,28,SMB,self_serve,2026-04-04,2026-04-04,trial_expired
+518,cus_000518,Blue Networks Inc,US,United States,North America,Midwest,professional_services,79,Mid-Market,self_serve,2025-12-18,2025-12-18,trial_expired
+519,cus_000519,Golden Fabrication Pty Ltd,AU,Australia,APAC,Australia,healthcare,40,SMB,self_serve,2025-11-28,2025-11-28,trial_expired
+520,cus_000520,Anchor Group Pty Ltd,AU,Australia,APAC,Australia,,48,SMB,self_serve,2023-09-25,2023-09-25,trial_expired
+521,cus_000521,Bright Studios Ltd,GB,United Kingdom,Europe,United Kingdom,construction,34,SMB,self_serve,2025-01-11,2025-01-11,trial_expired
+522,cus_000522,Canyon Supply LLC,US,United States,North America,West,financial_services,27,SMB,self_serve,2025-09-27,2025-09-27,trial_expired
+523,cus_000523,Copper Workshops Inc,US,United States,North America,Midwest,construction,75,Mid-Market,self_serve,2024-03-10,2024-03-10,trial_expired
+524,cus_000524,Bright Solutions LLP,GB,United Kingdom,Europe,United Kingdom,financial_services,58,Mid-Market,self_serve,2024-12-21,2024-12-21,trial_expired
+525,cus_000525,Oak Labs Pty Ltd,AU,Australia,APAC,Australia,healthcare,54,Mid-Market,self_serve,2026-05-10,2026-05-10,trial_expired
+526,cus_000526,Harbour Ventures Inc,US,United States,North America,South,professional_services,22,SMB,self_serve,2023-04-23,2023-04-23,trial_expired
+527,cus_000527,Cedar Ventures Pty Ltd,AU,Australia,APAC,Australia,manufacturing,16,SMB,self_serve,2025-05-30,2025-05-30,trial_expired
+528,cus_000528,Blue Systems SAS,FR,France,Europe,Western Europe,manufacturing,67,Mid-Market,self_serve,2025-02-06,2025-02-06,trial_expired
+529,cus_000529,Amber Collective Ltd,GB,United Kingdom,Europe,United Kingdom,retail,35,SMB,self_serve,2024-05-24,2024-05-24,trial_expired
+530,cus_000530,Copper Studios Pty Ltd,AU,Australia,APAC,Australia,healthcare,67,Mid-Market,self_serve,2025-09-24,2025-09-24,trial_expired
+531,cus_000531,Anchor Services SARL,FR,France,Europe,Western Europe,,15,SMB,self_serve,2024-10-22,2024-10-22,trial_expired
+532,cus_000532,Atlas Holdings Corp,US,United States,North America,South,healthcare,54,Mid-Market,self_serve,2025-12-24,2025-12-24,trial_expired
+533,cus_000533,Bright Networks Corp,US,United States,North America,South,retail,32,SMB,self_serve,2023-04-18,2023-04-18,trial_expired
+534,cus_000534,Granite Industries Inc,US,United States,North America,West,education,57,Mid-Market,self_serve,2025-01-03,2025-01-03,trial_expired
+535,cus_000535,Urban Supply Pty Ltd,AU,Australia,APAC,Australia,professional_services,27,SMB,self_serve,2023-03-06,2023-03-06,trial_expired
+536,cus_000536,River Advisory Inc,US,United States,North America,Northeast,construction,75,Mid-Market,self_serve,2025-02-10,2025-02-10,trial_expired
+537,cus_000537,Copper Advisory Corp,US,United States,North America,West,professional_services,14,SMB,self_serve,2023-07-02,2023-07-02,trial_expired
+538,cus_000538,Forest Works B.V.,NL,Netherlands,Europe,Western Europe,healthcare,71,Mid-Market,self_serve,2024-09-30,2024-09-30,trial_expired
+539,cus_000539,Blue Advisory Corp,US,United States,North America,Northeast,construction,74,Mid-Market,self_serve,2026-08-12,2026-08-12,trial_expired
+540,cus_000540,Pacific Industries Pty Ltd,AU,Australia,APAC,Australia,professional_services,77,Mid-Market,self_serve,2025-04-28,2025-04-28,trial_expired
+541,cus_000541,Blue Partners Inc,US,United States,North America,Northeast,manufacturing,78,Mid-Market,self_serve,2025-11-12,2025-11-12,trial_expired
+542,cus_000542,Anchor Solutions Inc,US,United States,North America,West,healthcare,12,SMB,self_serve,2026-06-28,2026-06-28,trial_expired
+543,cus_000543,Urban Partners Pty Ltd,AU,Australia,APAC,Australia,professional_services,66,Mid-Market,self_serve,2023-09-28,2023-09-28,trial_expired
+544,cus_000544,Metro Labs SARL,FR,France,Europe,Western Europe,facilities,27,SMB,self_serve,2025-08-29,2025-08-29,trial_expired
+545,cus_000545,Coastal Labs Corp,US,United States,North America,Northeast,manufacturing,22,SMB,self_serve,2022-08-22,2022-08-22,trial_expired
+546,cus_000546,Forest Networks LLC,US,United States,North America,West,,46,SMB,self_serve,2025-08-17,2025-08-17,trial_expired
+547,cus_000547,Granite Studios GmbH,DE,Germany,Europe,DACH,professional_services,64,Mid-Market,self_serve,2026-06-01,2026-06-01,trial_expired
+548,cus_000548,Alpine Labs Corp,US,United States,North America,Midwest,,51,Mid-Market,self_serve,2025-03-07,2025-03-07,trial_expired
+549,cus_000549,Golden Fabrication LLC,US,United States,North America,Northeast,professional_services,72,Mid-Market,self_serve,2025-06-13,2025-06-13,trial_expired
+550,cus_000550,Silver Systems AB,SE,Sweden,Europe,Nordics,construction,51,Mid-Market,self_serve,2025-09-05,2025-09-05,trial_expired
+551,cus_000551,Blue Operations Inc,US,United States,North America,Northeast,manufacturing,50,Mid-Market,self_serve,2023-11-20,2023-11-20,trial_expired
+552,cus_000552,Forge Collective Inc,US,United States,North America,Midwest,retail,16,SMB,self_serve,2024-06-23,2024-06-23,trial_expired
+553,cus_000553,Vertex Works LLC,US,United States,North America,Northeast,manufacturing,63,Mid-Market,self_serve,2024-03-13,2024-03-13,trial_expired
+554,cus_000554,Beacon Fabrication LLP,GB,United Kingdom,Europe,United Kingdom,manufacturing,30,SMB,self_serve,2024-12-11,2024-12-11,trial_expired
+555,cus_000555,Silver Works AG,DE,Germany,Europe,DACH,education,48,SMB,self_serve,2025-09-17,2025-09-17,trial_expired
+556,cus_000556,Urban Services LLC,US,United States,North America,West,logistics,63,Mid-Market,self_serve,2024-05-16,2024-05-16,trial_expired
+557,cus_000557,Forest Services AG,DE,Germany,Europe,DACH,manufacturing,49,SMB,self_serve,2022-11-25,2022-11-25,trial_expired
+558,cus_000558,Harbour Systems Ltd,CA,Canada,North America,Canada,logistics,45,SMB,self_serve,2026-06-28,2026-06-28,trial_expired
+559,cus_000559,Apex Operations LLC,US,United States,North America,South,facilities,26,SMB,self_serve,2023-03-21,2023-03-21,trial_expired
+560,cus_000560,Urban Labs Ltd,GB,United Kingdom,Europe,United Kingdom,retail,11,SMB,self_serve,2023-06-26,2023-06-26,trial_expired
+561,cus_000561,Forest Collective LLC,US,United States,North America,South,logistics,45,SMB,self_serve,2025-09-14,2025-09-14,trial_expired
+562,cus_000562,Maple Retail LLC,US,United States,North America,Northeast,retail,80,Mid-Market,self_serve,2023-12-26,2023-12-26,trial_expired
+563,cus_000563,Vertex Workshops Pty Ltd,AU,Australia,APAC,Australia,professional_services,7,SMB,self_serve,2025-01-30,2025-01-30,trial_expired
+564,cus_000564,North Partners Corp,US,United States,North America,West,,16,SMB,self_serve,2023-04-19,2023-04-19,trial_expired
+565,cus_000565,Alpine Engineering LLP,GB,United Kingdom,Europe,United Kingdom,facilities,38,SMB,self_serve,2026-03-15,2026-03-15,trial_expired
+566,cus_000566,North Studios LLP,GB,United Kingdom,Europe,United Kingdom,healthcare,50,Mid-Market,self_serve,2026-07-23,2026-07-23,trial_expired
+567,cus_000567,Forest Solutions Inc,US,United States,North America,South,logistics,52,Mid-Market,self_serve,2025-11-05,2025-11-05,trial_expired
+568,cus_000568,Atlas Operations Ltd,CA,Canada,North America,Canada,professional_services,56,Mid-Market,self_serve,2023-02-19,2023-02-19,trial_expired
+569,cus_000569,Atlas Studios Corp,US,United States,North America,South,financial_services,11,SMB,self_serve,2023-05-22,2023-05-22,trial_expired
+570,cus_000570,Urban Logistics Pty Ltd,AU,Australia,APAC,Australia,construction,79,Mid-Market,self_serve,2024-05-18,2024-05-18,trial_expired

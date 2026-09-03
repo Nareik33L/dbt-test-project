@@ -1,0 +1,23 @@
+version: 2
+
+seeds:
+  - name: raw_customers
+    description: CRM extract of organisations, including expired trials.
+  - name: raw_plans
+    description: Packaged plan catalogue and list prices.
+  - name: raw_subscriptions
+    description: Current-state subscriptions. Reactivations are new rows.
+  - name: raw_subscription_history
+    description: Type-2 commercial history. valid_to is exclusive; current rows use 9999-12-31.
+  - name: raw_subscription_events
+    description: Lifecycle events used to explain history changes.
+  - name: raw_invoices
+    description: Billing extract. Amounts are USD.
+  - name: raw_invoice_items
+    description: Invoice lines (subscription, add-on, one-time).
+  - name: raw_product_usage
+    description: Daily usage on days with recorded activity.
+  - name: raw_support_tickets
+    description: Support-desk extract.
+  - name: raw_trials
+    description: Self-serve trials and conversion outcome.

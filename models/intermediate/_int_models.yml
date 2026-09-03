@@ -1,0 +1,68 @@
+version: 2
+
+models:
+  - name: int_subscription_monthly
+    description: >
+      Subscription-month grain. One row per subscription that was commercially
+      active at month-end, with MRR and seats as of that date.
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - subscription_id
+            - month_start
+    columns:
+      - name: subscription_month_id
+        tests:
+          - unique
+          - not_null
+      - name: subscription_id
+        tests:
+          - not_null
+      - name: customer_id
+        tests:
+          - not_null
+      - name: month_start
+        tests:
+          - not_null
+      - name: mrr
+        tests:
+          - not_null
+
+  - name: int_customer_monthly
+    description: Customer-month grain rolled up from subscription months. Ending MRR for the month.
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - customer_id
+            - month_start
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+      - name: month_start
+        tests:
+          - not_null
+      - name: mrr
+        tests:
+          - not_null
+
+  - name: int_mrr_movements
+    description: >
+      Customer-month MRR bridge. Classifies each month as new, expansion,
+      contraction, churn, reactivation, or retained, including a zero-MRR
+      row in the cancel month so churn is visible.
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - customer_id
+            - month_start
+    columns:
+      - name: mrr_movement_id
+        tests:
+          - unique
+          - not_null
+      - name: movement_type
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["new", "expansion", "contraction", "churn", "reactivation", "retained"]

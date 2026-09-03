@@ -1,0 +1,282 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: Cleaned organisations from the application CRM extract.
+    columns:
+      - name: customer_id
+        description: Primary key.
+        tests:
+          - unique
+          - not_null
+      - name: customer_code
+        tests:
+          - unique
+          - not_null
+      - name: organisation_name
+        tests:
+          - not_null
+      - name: country_code
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ["US", "CA", "GB", "DE", "FR", "NL", "SE", "AU"]
+      - name: region
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ["North America", "Europe", "APAC"]
+      - name: segment
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ["SMB", "Mid-Market", "Enterprise"]
+      - name: acquisition_channel
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ["self_serve", "inbound", "outbound", "partner", "event"]
+      - name: status
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ["active", "churned", "trial_expired"]
+      - name: signup_date
+        tests:
+          - not_null
+
+  - name: stg_plans
+    description: Cleaned plan catalogue.
+    columns:
+      - name: plan_id
+        tests:
+          - unique
+          - not_null
+      - name: plan_code
+        tests:
+          - unique
+          - not_null
+      - name: plan_name
+        tests:
+          - not_null
+      - name: list_price_monthly
+        tests:
+          - not_null
+
+  - name: stg_subscriptions
+    description: Cleaned subscriptions. One row per subscription lifecycle.
+    columns:
+      - name: subscription_id
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_customers')
+                field: customer_id
+      - name: plan_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_plans')
+                field: plan_id
+      - name: billing_interval
+        tests:
+          - accepted_values:
+              arguments:
+                values: ["monthly", "annual"]
+      - name: status
+        tests:
+          - accepted_values:
+              arguments:
+                values: ["active", "cancelled"]
+      - name: started_at
+        tests:
+          - not_null
+
+  - name: stg_subscription_history
+    description: Cleaned type-2 subscription commercial history.
+    columns:
+      - name: subscription_history_id
+        tests:
+          - unique
+          - not_null
+      - name: subscription_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_subscriptions')
+                field: subscription_id
+      - name: customer_id
+        tests:
+          - not_null
+      - name: valid_from
+        tests:
+          - not_null
+      - name: valid_to
+        tests:
+          - not_null
+      - name: status
+        tests:
+          - accepted_values:
+              arguments:
+                values: ["active"]
+
+  - name: stg_subscription_events
+    description: Cleaned subscription lifecycle events.
+    columns:
+      - name: event_id
+        tests:
+          - unique
+          - not_null
+      - name: subscription_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_subscriptions')
+                field: subscription_id
+      - name: event_at
+        tests:
+          - not_null
+      - name: event_type
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values:
+                  - created
+                  - plan_upgraded
+                  - plan_downgraded
+                  - seats_expanded
+                  - seats_contracted
+                  - cancelled
+                  - reactivated
+
+  - name: stg_invoices
+    description: Cleaned invoices. Amounts are USD.
+    columns:
+      - name: invoice_id
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_customers')
+                field: customer_id
+      - name: invoice_date
+        tests:
+          - not_null
+      - name: status
+        tests:
+          - accepted_values:
+              arguments:
+                values: ["paid", "open", "void", "uncollectible"]
+      - name: total_amount
+        tests:
+          - not_null
+
+  - name: stg_invoice_items
+    description: Cleaned invoice line items.
+    columns:
+      - name: invoice_item_id
+        tests:
+          - unique
+          - not_null
+      - name: invoice_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_invoices')
+                field: invoice_id
+      - name: item_type
+        tests:
+          - accepted_values:
+              arguments:
+                values: ["subscription", "addon", "one_time"]
+      - name: amount
+        tests:
+          - not_null
+
+  - name: stg_product_usage
+    description: Cleaned daily product-usage events. One row per customer per active day.
+    columns:
+      - name: usage_id
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_customers')
+                field: customer_id
+      - name: usage_date
+        tests:
+          - not_null
+
+  - name: stg_support_tickets
+    description: Cleaned support tickets.
+    columns:
+      - name: ticket_id
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_customers')
+                field: customer_id
+      - name: opened_at
+        tests:
+          - not_null
+      - name: status
+        tests:
+          - accepted_values:
+              arguments:
+                values: ["open", "pending", "solved", "closed"]
+      - name: category
+        tests:
+          - accepted_values:
+              arguments:
+                values: ["how_to", "bug", "billing", "feature_request", "outage", "onboarding"]
+      - name: priority
+        tests:
+          - accepted_values:
+              arguments:
+                values: ["low", "medium", "high", "urgent"]
+
+  - name: stg_trials
+    description: Cleaned self-serve trials.
+    columns:
+      - name: trial_id
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_customers')
+                field: customer_id
+      - name: trial_start_date
+        tests:
+          - not_null

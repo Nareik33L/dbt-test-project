@@ -1,0 +1,68 @@
+version: 2
+
+sources:
+  - name: oakwell_app
+    description: >
+      Application, billing, product-usage, and support extracts for Oakwell.
+      In this local project the extracts are loaded as dbt seeds so the
+      warehouse can be rebuilt from a clean checkout.
+    schema: main
+    tables:
+      - name: customers
+        identifier: raw_customers
+        description: Organisations that have signed up for Oakwell, including expired trials.
+        columns:
+          - name: customer_id
+            description: Internal numeric customer identifier.
+          - name: customer_code
+            description: External customer code (cus_######).
+          - name: organisation_name
+            description: Legal or trading name of the organisation.
+          - name: country_code
+            description: ISO 3166-1 alpha-2 country code.
+          - name: region
+            description: Commercial region (North America, Europe, APAC).
+          - name: segment
+            description: Size segment derived from employee count at signup.
+          - name: acquisition_channel
+            description: Channel credited for the original signup.
+          - name: status
+            description: Current lifecycle status (active, churned, trial_expired).
+
+      - name: plans
+        identifier: raw_plans
+        description: Packaged subscription plans and list pricing.
+
+      - name: subscriptions
+        identifier: raw_subscriptions
+        description: One row per subscription. Reactivations create a new subscription.
+
+      - name: subscription_history
+        identifier: raw_subscription_history
+        description: >
+          Type-2 history of subscription commercial state. valid_to is exclusive;
+          the current row uses 9999-12-31.
+
+      - name: subscription_events
+        identifier: raw_subscription_events
+        description: Commercial lifecycle events (created, plan changes, seat changes, cancellations).
+
+      - name: invoices
+        identifier: raw_invoices
+        description: Invoices issued by the billing system. Amounts are USD.
+
+      - name: invoice_items
+        identifier: raw_invoice_items
+        description: Invoice line items, including subscription charges, add-ons, and one-time fees.
+
+      - name: product_usage
+        identifier: raw_product_usage
+        description: Daily product usage at customer grain, only for days with recorded activity.
+
+      - name: support_tickets
+        identifier: raw_support_tickets
+        description: Support tickets from the customer desk.
+
+      - name: trials
+        identifier: raw_trials
+        description: Self-serve product trials and whether they converted to a paid subscription.
